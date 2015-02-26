@@ -6,3 +6,6 @@
 5. Edit name
 6. Edit meaning for the name
 7. Labels (categories/tags)
+8. Create family
+9. Add members to family
+10. Edit family members
