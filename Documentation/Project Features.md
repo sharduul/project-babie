@@ -10,7 +10,8 @@
 9. Add members to family
 10. Edit family members (by inviting)
 11. Vote the name
-12. Set preferences for better search results.... ethnicity, gender, etc...
+12. Set preferences for better search results.... ethnicity, gender, starting letter etc...
+13. Suggest name based on current viewed name... based on meaning, similar sounding, same letter
 
 
 ###Optional (after the main features are implemented)
