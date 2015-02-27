@@ -10,6 +10,7 @@
 9. Add members to family
 10. Edit family members (by inviting)
 11. Vote the name
+12. Set preferences for better search results.... ethnicity, gender, etc...
 
 
 ###Optional (after the main features are implemented)
