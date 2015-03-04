@@ -1,3 +1,3 @@
 # project-babie
 
-name you baby with the consent of your family!
+name your baby with the consent of your family!
