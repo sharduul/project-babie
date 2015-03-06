@@ -3,4 +3,4 @@ This document contains notes about new findings that might be useful for this pr
 1. Analytics
 Tools that can be used for tracking and analysing how users are using your project.
 
- *Mixpanel - https://mixpanel.com/
+ 1. Mixpanel - https://mixpanel.com/
