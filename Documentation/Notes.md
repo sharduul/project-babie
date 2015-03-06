@@ -4,3 +4,6 @@ This document contains notes about new findings that might be useful for this pr
 Tools that can be used for tracking and analysing how users are using your project.
 
  1. Mixpanel - https://mixpanel.com/
+
+2. Cool controls and design patterns:
+ 1. Carousel - http://www.smashingmagazine.com/2015/02/09/carousel-usage-exploration-on-mobile-e-commerce-websites/
