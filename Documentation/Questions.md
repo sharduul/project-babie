@@ -10,3 +10,4 @@ This document consists of the points to think about. Steps which will be needed 
 5. Where and how to host the service
 6. Use of material design
 7. Design the app screens..create folder for mockups.. could be hand drawn images
+8. Scroll through names list alphabetically - like whatsapp contact... check what is it called..
