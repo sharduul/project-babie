@@ -9,4 +9,4 @@ This document consists of the points to think about. Steps which will be needed 
 4. REST service... how will it look... the endpoints..
 5. Where and how to host the service
 6. Use of material design
-7. Design the app screens
+7. Design the app screens..create folder for mockups.. could be hand drawn images
