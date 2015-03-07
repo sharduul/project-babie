@@ -1,0 +1,12 @@
+{
+  "userId": 1,
+  "userInfo": "Jay Kale"
+  "reputationPoints": 50,
+  "gender": "M",
+  "email": "jayk@gmail.com",
+  "password": "SHA1orMD5-hash"
+}
+
+Notes:
+- Family information
+- Role/Rights - admin etc...
