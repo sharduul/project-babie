@@ -1,6 +1,6 @@
 {
 	"nameId": 1,
-	"nameInfo": "abhay",
+	"nameInfo": "vijay",
 	"meaning": {
 		"meaningId": 1,
 		"meaningInfo": "victory"
@@ -16,5 +16,6 @@
 			"labelId": 2,
 			"labelInfo": "boy"
 		}
-	]
+	],
+	"assignedByCount": 30
 }
