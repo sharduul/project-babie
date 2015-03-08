@@ -1,13 +1,15 @@
 {
-  "name"         : "babie-service",
-  "version"      : "0.0.1",
-  "description"  : "Service side of the application",
-  "main"         : "server.js",
-  "author"       : "Shardul",
-  "dependencies" : {
-    "express"    : "latest",
-    "request"    : "latest",
-    "mongoose"   : "latest",
-    "body-parser": "*"
+  "name"          : "babie-service",
+  "version"       : "0.0.1",
+  "description"   : "Service side of the application",
+  "main"          : "server.js",
+  "author"        : "Shardul",
+  "dependencies"  : {
+    "express"     : "latest",
+    "request"     : "latest",
+    "mongoose"    : "latest",
+    "body-parser" : "*",
+    "gulp"        : "latest",
+    "gulp-jshint" : "latest"
   }
 }
