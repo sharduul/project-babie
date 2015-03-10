@@ -5,3 +5,7 @@ This document contains notes about new findings that might be useful for this pr
 
 2. Cool controls and design patterns:
  1. Carousel - http://www.smashingmagazine.com/2015/02/09/carousel-usage-exploration-on-mobile-e-commerce-websites/
+
+3.Ionic:
+ 1. http://ionicframework.com/blog/view-app-is-alive/
+ 2. http://ionicframework.com/blog/automating-icons-and-splash-screens/
