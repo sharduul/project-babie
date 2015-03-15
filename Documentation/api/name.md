@@ -7,7 +7,7 @@ URL: /api/name
 NA
 
 *Response:*
-
+```json
 {
 	"nameId": 1,
 	"nameInfo": "vijay",
@@ -35,7 +35,7 @@ NA
 	],
 	"assignedByCount": 30
 }
-
+```
 
 
 2. POST a new name
