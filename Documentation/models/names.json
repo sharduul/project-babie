@@ -5,14 +5,14 @@
 		"meaningId": 1,
 		"meaningInfo": "victory"
 	},
-	"upVotes": 30,
+	"upVote": 30,
 	"viewCount": 100,
 	"labels": [
-		"label": {
+		 {
 			"labelId": 1,
 			"labelInfo": "god"
 		},
-		"label": {
+		{
 			"labelId": 2,
 			"labelInfo": "boy"
 		}
