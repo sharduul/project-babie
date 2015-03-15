@@ -2,13 +2,12 @@ var express = require('express');
 var http = require('http');
 var fs = require('fs');
 var request = require('request');
+var db = require('./src/mongoose');
 
 
 var app = express();
 
-// Require all the APIs
-require('./src/api/names.js')(app);
-
+require('./src/api')(app); // Require the index route here
 
 var server = http.createServer(app);
 server.listen(8000, function(){
