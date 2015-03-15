@@ -1,7 +1,12 @@
 1. Get all names
 
-URL: /api/names
+URL: /api/name
 
+*Request:*
+
+NA
+
+*Response:*
 
 {
 	"nameId": 1,
@@ -30,3 +35,13 @@ URL: /api/names
 	],
 	"assignedByCount": 30
 }
+
+
+
+2. POST a new name
+
+URL: /api/name
+
+*Request:*
+
+*Response:*
