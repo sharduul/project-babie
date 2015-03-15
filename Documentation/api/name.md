@@ -1,4 +1,4 @@
-1. Get all names   
+*Get all names   
 
 URL: /api/name
 
@@ -37,7 +37,7 @@ NA
 }
 ```
 
-2. POST a new name
+*POST a new name
 
 URL: /api/name
 
