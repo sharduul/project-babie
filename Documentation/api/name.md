@@ -2,11 +2,11 @@
 
 URL: /api/name
 
-*Request:*
+**Request:**
 
 NA
 
-*Response:*
+**Response:**
 ```json
 {
 	"nameId": 1,
@@ -42,6 +42,6 @@ NA
 
 URL: /api/name
 
-*Request:*
+**Request:**
 
-*Response:*
+**Response:**
