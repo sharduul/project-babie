@@ -1,21 +1,27 @@
 {
 	"nameId": 1,
 	"nameInfo": "vijay",
-	"meaning": {
-		"meaningId": 1,
-		"meaningInfo": "victory"
-	},
+	"meaning": [
+		{
+			"meaningId": 1,
+			"meaningInfo": "victory"
+		},
+		{
+			"meaningId": 1,
+			"meaningInfo": "victory"
+		}, ...
+	],
 	"upVotes": 30,
 	"viewCount": 100,
 	"labels": [
-		"label": {
+		{
 			"labelId": 1,
 			"labelInfo": "god"
 		},
-		"label": {
+		{
 			"labelId": 2,
 			"labelInfo": "boy"
-		}
+		}, ...
 	],
 	"assignedByCount": 30
 }
