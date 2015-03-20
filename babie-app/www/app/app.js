@@ -40,12 +40,17 @@ function Config($stateProvider, $urlRouterProvider){
 
     .state('app', {
       url: "/app",
+      //abstract: true,
       templateUrl: "templates/header.html"
+    })
+    .state('app.home', {
+      url: "/home",
+      templateUrl: "templates/home.html"
     });
 
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/code');
+  $urlRouterProvider.otherwise('/home');
 
 }
 
