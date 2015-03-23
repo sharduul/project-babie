@@ -21,7 +21,7 @@ function NameResource($resource) {
 			get: { method: 'GET', isArray: true, cache: false }
 		});
 
-		// ********* for reference *********
+		// ********* for reference when you implement login and have tokens *********
 		// return $resource('https://beta.energycap.com/api/v2/place?filter=parentId+equals+%276994%27', {userId:'@id'},
 		// 	{
 		// 	    get: {
