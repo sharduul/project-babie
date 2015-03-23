@@ -2,7 +2,7 @@
 
 'use strict';
 
-angular.module('babie.controllers', ['ionic'])
+angular.module('babie.controllers')
 
 .controller('login', Login);
 

@@ -4,7 +4,7 @@
 
 
 angular
-  .module('babie', ['ionic', 'ngMaterial'])
+  .module('babie', ['ionic', 'ngMaterial', 'babie.controllers'])
   .run(Run)
   .config(Config)
 
@@ -45,7 +45,8 @@ function Config($stateProvider, $urlRouterProvider){
     })
     .state('app.home', {
       url: "/home",
-      templateUrl: "templates/home.html"
+      templateUrl: "templates/home.html",
+      controller: 'homeController as home'
     });
 
 
