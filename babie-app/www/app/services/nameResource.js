@@ -17,12 +17,12 @@ function NameResource($resource) {
 
 	function name(){
 
-		return $resource('https://api.github.com/users/mralexgray/repos', { placeId: '@placeId' }, {
+		return $resource('http://localhost:8000/api/name/:name', { nameId: '@nameId' }, {
 			get: { method: 'GET', isArray: true, cache: false }
 		});
 
 		// ********* for reference when you implement login and have tokens *********
-		// return $resource('https://beta.energycap.com/api/v2/place?filter=parentId+equals+%276994%27', {userId:'@id'},
+		// return $resource('https://api.github.com/users/mralexgray/repos', {userId:'@id'},
 		// 	{
 		// 	    get: {
 		// 	        method: 'GET', isArray: true,
