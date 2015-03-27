@@ -23,5 +23,6 @@
 			"labelInfo": "boy"
 		}, ...
 	],
-	"assignedByCount": 30
+	"assignedByCount": 30,
+	"gender": "girl"
 }
