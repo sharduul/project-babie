@@ -20,6 +20,6 @@ var NameSchema = new Schema({
 	assignedByCount: {type: Number}
 });
 
-var Name = mongoose.model('Name', NameSchema);
+var Name = mongoose.model('names', NameSchema);
 
 exports.nameModel = Name;
