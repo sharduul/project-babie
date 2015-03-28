@@ -4,7 +4,7 @@
 
 
 angular
-  .module('babie', ['ionic', 'ngMaterial', 'ngResource', 'babie.controllers', 'babie.services'])
+  .module('babie', ['ionic', 'ngMaterial', 'ngResource', 'babie.controllers', 'babie.services', 'babie.directives'])
   .run(Run)
   .config(Config)
 
