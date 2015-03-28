@@ -9,9 +9,7 @@ module.exports = function(app, counter){
 
 		Name.find({}, function(err, names){
 			
-			//res.send(names); // send array of names to the client
-
-			console.log(names.length);
+			res.send(names); // send array of names to the client
 		});
 
 		console.log("success /name");
@@ -21,30 +19,7 @@ module.exports = function(app, counter){
 	// get the next sequence
 	app.get('/api/counter', function(req, res){
 
-		//console.log(Name);
-		//console.log(Counter);
-
-		// Counter.findAndModify({ "_id":"users" }, [], { $inc: { "seq":1 } }, {}, function (err, counter) {
-		//   if (err) throw err;
-		//   	console.log('updated, counter is ' + counter.seq);
-		// });
-
-
-
-
-		//Counter.collection.insert({"_id":"users", "seq":1});
-
-		// Counter.find({}, function(err, cnt){
-			
-		// 	res.send(cnt);
-
-		// 	//console.log(cnt.length);
-		// });
-
 		counter.getNextSequence(Name);
-
-		//console.log(counter.getNextSequence(Name));
-		//console.log(counter.getNextSequence);
 
 	});
 

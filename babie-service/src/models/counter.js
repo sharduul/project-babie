@@ -7,9 +7,6 @@ var CounterSchema = new Schema({
 	seq: Number
 });
 
-// CounterSchema.statics.findAndModify = function (query, sort, doc, options, callback) {
-//   return this.collection.findAndModify(query, sort, doc, options, callback);
-// };
 
 var Counter = mongoose.model('counters', CounterSchema);
 
