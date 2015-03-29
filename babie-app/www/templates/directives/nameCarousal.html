@@ -1,9 +1,25 @@
 <md-card>
 <div layout="row" layout-margin layout-fill>
-	<div flex="60">name</div>
-	<div flex="40">labels</div>
+	<div flex="60">
+		<h2>Abhay</h2>
+	</div>
+	<div flex><!--compensate md-card width-->
+		<label class="labels">label1</label>
+		<label class="labels">label1</label>
+		<label class="labels">labelerewr1</label>
+		<label class="labels">label1</label>
+		<label class="labels">label1</label>
+	</div>
 </div>
 <div layout="row" layout-margin layout-fill>
-	<div flex>meaning</div>
+	<div flex="75">A person without any fears</div>
+	<div flex>
+		<md-button ng-href="{{googleUrl}}" target="_blank">...more</md-button>
+	</div>
 </div>
+<section layout="row">
+        <md-button ng-href="{{googleUrl}}" target="_blank">add</md-button>
+        <md-button class="md-primary" ng-href="{{googleUrl}}" target="_blank">upvote</md-button>
+        <md-button>assign</md-button>
+</section>
 </md-card>
