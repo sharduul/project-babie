@@ -9,5 +9,6 @@ module.exports = function(app){
 	// require all the apis here
 	var counter = require('./counter.js');
 	require('./name.js')(app, counter);
+	require('./login.js')(app, counter);
 	
 };
