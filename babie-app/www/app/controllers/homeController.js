@@ -10,16 +10,17 @@
 
 	function homeController(apiResource) {
 		var vm = this;
+		vm.names = {};
 
 		vm.testText = '...still the home page!!!';
 
-
 		apiResource.name.name().get(function(result){
 
-			console.log(result);
-		})
+			vm.names = result;
 
-		
+			console.log(result);
+		});
+
 
 	}
 

@@ -1,7 +1,7 @@
 <md-card>
 <div layout="row" layout-margin layout-fill>
 	<div flex="50">
-		<h2>Abhay</h2>
+		<h2>{{nameCarousal.name.nameInfo}}</h2>
 	</div>
 	<div flex>
         <md-button class="labels md-raised">lel1</md-button>
@@ -19,8 +19,8 @@
 	</div>
 </div>
 <section layout="row">
-        <md-button ng-href="{{googleUrl}}" target="_blank">add</md-button>
         <md-button class="md-primary" ng-href="{{googleUrl}}" target="_blank">upvote</md-button>
         <md-button>assign</md-button>
+        <md-button ng-href="{{googleUrl}}" target="_blank">add</md-button>
 </section>
 </md-card>
