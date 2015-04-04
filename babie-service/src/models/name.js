@@ -17,9 +17,12 @@ var NameSchema = new Schema({
 			labelInfo: {type: String}
 		}
 	],
-	assignedByCount: {type: Number}
+	assignedByCount: {type: Number},
+	gender: {type: String}
 });
 
 var Name = mongoose.model('names', NameSchema);
+var OldNames = mongoose.model('oldnames', NameSchema);
 
 exports.nameModel = Name;
+exports.oldNameModel = OldNames;

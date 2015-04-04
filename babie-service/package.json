@@ -10,6 +10,8 @@
     "mongoose"    : "latest",
     "body-parser" : "*",
     "gulp"        : "latest",
-    "gulp-jshint" : "latest"
+    "gulp-jshint" : "latest",
+    "lodash"      : "latest",
+    "q"           : "latest"
   }
 }
