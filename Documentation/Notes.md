@@ -12,3 +12,4 @@ This document contains notes about new findings that might be useful for this pr
 
 4. Material Design
  1. Icon fonts - http://zavoloklom.github.io/material-design-iconic-font/index.html (unofficial)
+ 2. Md icons - https://github.com/google/material-design-icons/blob/master/README.md (official)
