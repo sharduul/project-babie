@@ -11,8 +11,8 @@
 	<div class="ellipsis" flex><p>{{nameCarousal.name.meaning[0].meaningInfo}}</p></div>
 </div>
 <section layout="row">
-        <md-button class="md-primary" ng-href="{{googleUrl}}" target="_blank">upvote</md-button>
-        <md-button>assign</md-button>
-        <md-button ng-href="{{googleUrl}}" target="_blank">add</md-button>
+        <md-button class="labels md-raised"><i class="md-thumb-up md-lg"></i>| {{nameCarousal.name.upVotes}}</md-button>
+        <md-button class="labels md-raised"><i class="md-visibility md-lg"></i>| {{nameCarousal.name.viewCount}}</md-button>
+        <md-button class="labels md-raised"><i class="md-done md-lg"></i>| {{nameCarousal.name.assignedByCount}}</md-button>
 </section>
 </md-card>

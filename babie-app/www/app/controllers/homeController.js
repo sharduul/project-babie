@@ -49,8 +49,10 @@
 					"labelId": 2,
 					"labelInfo": "boy"
 				}
-			]
-			
+			],
+			"upVotes": 30,
+			"assignedByCount": 30,
+			"viewCount": 100
 		},
 
 		{
@@ -75,7 +77,10 @@
 					"labelId": 2,
 					"labelInfo": "boy"
 				}
-			]
+			],
+			"upVotes": 30,
+			"assignedByCount": 30,
+			"viewCount": 100
 			
 		},
 
@@ -94,7 +99,10 @@
 					"labelId": 2,
 					"labelInfo": "boy"
 				}
-			]
+			],
+			"upVotes": 30,
+			"assignedByCount": 30,
+			"viewCount": 100
 			
 		},
 
@@ -120,7 +128,10 @@
 					"labelId": 2,
 					"labelInfo": "boy"
 				}
-			]
+			],
+			"upVotes": 30,
+			"assignedByCount": 30,
+			"viewCount": 100
 			
 		}
 
