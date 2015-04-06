@@ -4,16 +4,11 @@
 		<h2>{{nameCarousal.name.nameInfo}}</h2>
 	</div>
 	<div flex>
-        <md-button class="labels md-raised">lel1</md-button>
-        <md-button class="labels md-raised">label1</md-button>
-        <md-button class="labels md-raised">labsfdsfel1</md-button>
-        <md-button class="labels md-raised">label1</md-button>
-        <md-button class="labels md-raised">labsfdel1</md-button>
-        <md-button class="labels md-raised">label1</md-button>
+                <md-button class="labels md-raised" ng-repeat="label in nameCarousal.name.labels">{{label.labelInfo}}</md-button>
 	</div>
 </div>
 <div layout="row" layout-margin layout-fill>
-	<div class="ellipsis" flex><p>A person asdfasd fdfasff  asdfdafsdaf afasdfsadfads asfasf asfaaf fasdfdasfdasasasfasdf faddasffa dsfd sfsdfears</p></div>
+	<div class="ellipsis" flex><p>{{nameCarousal.name.meaning[0].meaningInfo}}</p></div>
 </div>
 <section layout="row">
         <md-button class="md-primary" ng-href="{{googleUrl}}" target="_blank">upvote</md-button>
