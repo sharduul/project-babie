@@ -9,3 +9,6 @@ This document contains notes about new findings that might be useful for this pr
 3.Ionic:
  1. http://ionicframework.com/blog/view-app-is-alive/
  2. http://ionicframework.com/blog/automating-icons-and-splash-screens/
+ 
+4. Material Design
+ 1. Icon fonts - http://zavoloklom.github.io/material-design-iconic-font/index.html (unofficial)
