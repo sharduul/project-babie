@@ -6,8 +6,10 @@ module.exports = function(app){
 		console.log("success /");
 	});
 
+	// require all the utility services here
+	var dbqueries = require('../common/dbqueries.js');
+
 	// require all the apis here
-	var counter = require('./counter.js');
-	require('./name.js')(app, counter);
+	require('./name.js')(app);
 	
 };
