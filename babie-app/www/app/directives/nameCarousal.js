@@ -22,7 +22,7 @@
 			controller: function(){
 				var vm = this;
 
-				console.log(vm.name);
+				//console.log(vm.name);
 				
 			}
 

@@ -10,140 +10,19 @@
 
 	function homeController(apiResource) {
 		var vm = this;
-		vm.names = {};
-
-		vm.testText = '...still the home page!!!';
+		vm.names = [];
 
 		// constructor
 		(function(){
 
-			// NEED IT: when names api is completely implemented
-			// apiResource.name.name().get({}, function(result){
-			// 	names = result;
-			// });
+			//NEED IT: when names api is completely implemented
+			apiResource.name.name().get({}, function(result){
+				console.log(_.find);
+
+				//vm.names = result;
+			});
 
 		})();
-
-		//apiResource.name.name().get(function(result){
-
-		var result = [
-		{
-			"nameId": 1,
-			"nameInfo": "vijay",
-			"meaning": [
-				{
-					"meaningId": 1,
-					"meaningInfo": "A person asdfasd fdfasff  asdfdafsdaf afasdfsadfads asfasf asfaaf fasdfdasfdas"
-				},
-				{
-					"meaningId": 2,
-					"meaningInfo": "A person asdfasd fdfasff  asdfdafsdaf afasdfsadfads asfasf asfaaf fasdfdasf"
-				}
-			],
-			"labels": [
-				{
-					"labelId": 1,
-					"labelInfo": "god"
-				},
-				{
-					"labelId": 2,
-					"labelInfo": "boy"
-				}
-			],
-			"upVotes": 30,
-			"assignedByCount": 30,
-			"viewCount": 100
-		},
-
-		{
-			"nameId": 1,
-			"nameInfo": "vijay",
-			"meaning": [
-				{
-					"meaningId": 1,
-					"meaningInfo": "A person asdfasd fdfasff  asdfdafsdaf afasdfsadfads asfasf asfaaf fasdfdasfdasasasfasdf faddasffa dsfd sfsdfears"
-				},
-				{
-					"meaningId": 1,
-					"meaningInfo": "victory"
-				}
-			],
-			"labels": [
-				{
-					"labelId": 1,
-					"labelInfo": "god"
-				},
-				{
-					"labelId": 2,
-					"labelInfo": "boy"
-				}
-			],
-			"upVotes": 30,
-			"assignedByCount": 30,
-			"viewCount": 100
-			
-		},
-
-		{
-			"nameId": 1,
-			"nameInfo": "vijay",
-			"meaning": [
-				
-			],
-			"labels": [
-				{
-					"labelId": 1,
-					"labelInfo": "god"
-				},
-				{
-					"labelId": 2,
-					"labelInfo": "boy"
-				}
-			],
-			"upVotes": 30,
-			"assignedByCount": 30,
-			"viewCount": 100
-			
-		},
-
-		{
-			"nameId": 1,
-			"nameInfo": "vijay",
-			"meaning": [
-				{
-					"meaningId": 1,
-					"meaningInfo": "victory"
-				},
-				{
-					"meaningId": 1,
-					"meaningInfo": "victory"
-				}
-			],
-			"labels": [
-				{
-					"labelId": 1,
-					"labelInfo": "god"
-				},
-				{
-					"labelId": 2,
-					"labelInfo": "boy"
-				}
-			],
-			"upVotes": 30,
-			"assignedByCount": 30,
-			"viewCount": 100
-			
-		}
-
-		
-	]
-
-			vm.names = result;
-
-			//console.log(result);
-		//});
-
-
 	}
 
 })();
