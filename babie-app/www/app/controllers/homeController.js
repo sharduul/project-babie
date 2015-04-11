@@ -6,23 +6,31 @@
 		.module('babie.controllers', ['ionic'])
 		.controller('homeController', homeController);
 
-	homeController.$inject = ['apiResource'];
+	homeController.$inject = ['apiResource', 'helperService'];
 
-	function homeController(apiResource) {
+	function homeController(apiResource, helperService) {
 		var vm = this;
-		vm.names = [];
+		vm.alphabeticNames = [];
 
-		// constructor
+		var alphabetArray = helperService.alphabetString().split('');
+
 		(function(){
 
-			//NEED IT: when names api is completely implemented
 			apiResource.name.name().get({}, function(result){
-				console.log(_.find);
 
-				//vm.names = result;
+				var index = -1;
+				angular.forEach(alphabetArray, function(currentAlphabet){
+					
+					index++;
+					vm.alphabeticNames[index] = _.filter(result, function(item){
+						return helperService.regexProvider.startsWith(currentAlphabet).test(item.nameInfo);
+					});
+				});
+
 			});
 
 		})();
+		
 	}
 
 })();
