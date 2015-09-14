@@ -12,7 +12,9 @@ app.use(cors()); // solve cross site http requests
 
 require('./src/api')(app); // Require the index route here
 
+app.set('port', process.env.PORT || 8000);
+
 var server = http.createServer(app);
-server.listen(8000, function(){
-	console.log("babie service is running at http://127.0.0.1:8000/");
-})
+server.listen(app.get('port'), function(){
+    console.log("running on " + app.get('port'));
+});
