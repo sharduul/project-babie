@@ -3,9 +3,12 @@ var http = require('http');
 var fs = require('fs');
 var request = require('request');
 var db = require('./src/mongoose');
+var cors = require('cors');
 
 
 var app = express();
+
+app.use(cors()); // solve cross site http requests
 
 require('./src/api')(app); // Require the index route here
 

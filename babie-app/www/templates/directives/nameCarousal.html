@@ -1,14 +1,14 @@
 <md-card>
 <div layout="row" layout-margin layout-fill>
 	<div flex="50">
-		<h2>{{nameCarousal.name.nameInfo}}</h2>
+		<h3>{{nameCarousal.name.nameInfo}}</h3>
 	</div>
 	<div flex>
-                <md-button class="labels md-raised" ng-repeat="label in nameCarousal.name.labels">{{label.labelInfo}}</md-button>
+        <md-button class="labels md-raised" ng-repeat="label in nameCarousal.name.labels">{{label.labelInfo}}</md-button>
 	</div>
 </div>
 <div layout="row" layout-margin layout-fill>
-	<div class="ellipsis" flex><p>{{nameCarousal.name.meaning[0].meaningInfo}}</p></div>
+	<div class="ellipsis" flex><p>{{nameCarousal.name.meaning.meaningInfo}}</p></div>
 </div>
 <section layout="row">
         <md-button class="labels md-raised"><i class="md-thumb-up md-lg"></i>| {{nameCarousal.name.upVotes}}</md-button>

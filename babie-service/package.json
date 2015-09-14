@@ -12,6 +12,7 @@
     "gulp"        : "latest",
     "gulp-jshint" : "latest",
     "lodash"      : "latest",
-    "q"           : "latest"
+    "q"           : "latest",
+    "cors"        : "latest"
   }
 }
