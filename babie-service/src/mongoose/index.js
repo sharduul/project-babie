@@ -1,7 +1,8 @@
 var mongoose = require('mongoose');
 var config = require('./config.js');
 
-mongoose.connect('mongodb://' + config.mongo_host + ':' + config.mongo_port + '/dev-babie');
+mongoose.connect('mongodb://' + config.mongo_host + ':' + config.mongo_port + '/heroku_cnndmbkh');
+//mongoose.connect('mongodb://dool:dool@dbh63.mongolab.com:27637/heroku_cnndmbkh');
 
 
 mongoose.connection.on('open', function (ref) {
