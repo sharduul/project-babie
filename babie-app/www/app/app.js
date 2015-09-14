@@ -47,6 +47,11 @@ function Config($stateProvider, $urlRouterProvider){
       url: "/home",
       templateUrl: "templates/home.html",
       controller: 'homeController as home'
+    })
+    .state('app.nameDetails', {
+      url: "/nameDetails",
+      templateUrl: "templates/nameDetails.html",
+      controller: 'nameDetailsController as nameDetailsCtrl'
     });
 
 
