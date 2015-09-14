@@ -6,9 +6,9 @@ angular
 	.module('babie.services')
 	.factory('nameResource', NameResource);
 
-NameResource.$inject = ['$resource'];
+NameResource.$inject = ['$resource', 'helperService'];
 
-function NameResource($resource) {
+function NameResource($resource, helperService) {
 
 	return {
 		name: name
@@ -17,7 +17,7 @@ function NameResource($resource) {
 
 	function name(){
 
-		return $resource('http://localhost:8000/api/name/:name', { nameId: '@nameId' }, {
+		return $resource(helperService.baseUrl + 'api/name/:name', { nameId: '@nameId' }, {
 			get: { method: 'GET', isArray: true, cache: false }
 		});
 

@@ -12,7 +12,10 @@ function HelperService() {
 
 	var regexProvider = {
 		startsWith: startsWith
-	}
+	};
+
+	//var baseUrl = 'http://localhost:8000/';
+	var baseUrl = 'http://babie-service.herokuapp.com/';
 
 	function startsWith(input){
 		return new RegExp('^' + input, 'g');
@@ -24,6 +27,7 @@ function HelperService() {
 	}
 
 	return {
+		baseUrl: baseUrl,
 		regexProvider: regexProvider,
 		alphabetString: alphabetString
 	}
