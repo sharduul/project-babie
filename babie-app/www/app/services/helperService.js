@@ -23,7 +23,7 @@ function HelperService() {
 
 	function alphabetString(){
 		//return 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-		return 'A';
+		return 'AB';
 	}
 
 	return {

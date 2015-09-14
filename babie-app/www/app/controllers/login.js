@@ -1,15 +1,17 @@
 (function () {
 
-'use strict';
+	'use strict';
 
-angular.module('babie.controllers')
+	angular
+		.module('babie.controllers')
+		.controller('login', Login);
 
-.controller('login', Login);
+	Login.$inject = [];
 
-Login.$inject = [];
+	function Login() {
 
-function Login() {
-  var vm = this;
-}
+			var vm = this;
+			
+	}
 
 })();
