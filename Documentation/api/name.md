@@ -1,6 +1,6 @@
-* Get all names   
+###Get all names   
 
-###URL: /api/name
+**URL: /api/name**
 
 **Request:**
 
@@ -37,9 +37,9 @@ NA
 }]
 ```
 
-* Get a name by Id
+###Get a name by Id
 
-###URL: /api/name/:nameId
+**URL: /api/name/:nameId**
 
 **Request:**
 
@@ -76,9 +76,9 @@ NA
 }
 ```
 
-* POST a new name
+###POST a new name
 
-###URL: /api/name
+**URL: /api/name**
 
 **Request:**
 
