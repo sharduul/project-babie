@@ -11,6 +11,7 @@
 	function nameDetailsController(apiResource, $stateParams) {
 		var vm = this;
 		vm.name = {};
+        vm.getRealValue = getRealValue;
 
 		(function(){
 
@@ -20,11 +21,14 @@
 
 				vm.name = result[0];
 				console.log(vm.name);
-				
 
 			});
 
 		})();
+
+        function getRealValue(value){
+            return value === undefined ? 0 : value;
+        }
 	}
 
 })();

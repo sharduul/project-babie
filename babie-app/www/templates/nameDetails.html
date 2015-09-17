@@ -1,8 +1,15 @@
 <div layout="row" layout-sm="column">
-  <div flex>
-    {{nameDetailsCtrl.name.nameInfo}}
-  </div>
-  <div flex>
-    {{nameDetailsCtrl.name.meaning.meaningInfo}}
-  </div>
+    <div flex>
+        <h3>{{nameDetailsCtrl.name.nameInfo}}</h3>
+    </div>
+    <div flex>
+        <ul>
+            <li>{{nameDetailsCtrl.name.meaning.meaningInfo}}</li>
+        </ul>
+    </div>
+    <section layout="row">
+        <md-button class="labels md-raised"><i class="md-thumb-up md-lg"></i>| {{ nameDetailsCtrl.getRealValue(nameDetailsCtrl.name.upVotes) }}</md-button>
+        <md-button class="labels md-raised"><i class="md-visibility md-lg"></i>| {{ nameDetailsCtrl.getRealValue(nameDetailsCtrl.name.viewCount) }}</md-button>
+        <md-button class="labels md-raised"><i class="md-done md-lg"></i>| {{ nameDetailsCtrl.getRealValue(nameDetailsCtrl.name.assignedByCount) }}</md-button>
+    </section>
 </div>
