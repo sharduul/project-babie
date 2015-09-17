@@ -6,9 +6,9 @@
 		.module('babie.directives',[])
 		.directive('nameCarousal', NameCarousal);
 
-	NameCarousal.$inject = [];
+	NameCarousal.$inject = ['$window'];
 
-	function NameCarousal(){
+	function NameCarousal($window){
 
 		return {
 
@@ -29,15 +29,10 @@
 					return value === undefined ? 0 : value;
 				}
 
-
-
 				function goToNameDetails(){
 					console.log("sdgfdfg");
 					$window.location = "#/app/nameDetails";
 				}
-
-				//console.log(vm.name);
-				
 			}
 
 		}
