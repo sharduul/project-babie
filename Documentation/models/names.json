@@ -9,9 +9,10 @@
 		{
 			"meaningId": 1,
 			"meaningInfo": "victory"
-		}, ...
+		}
 	],
 	"upVotes": 30,
+	"downVotes": 10,
 	"viewCount": 100,
 	"labels": [
 		{
@@ -21,7 +22,7 @@
 		{
 			"labelId": 2,
 			"labelInfo": "boy"
-		}, ...
+		}
 	],
 	"assignedByCount": 30,
 	"gender": "girl"
