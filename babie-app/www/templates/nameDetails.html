@@ -4,7 +4,15 @@
     </div>
     <div flex>
         <ul>
-            <li>{{nameDetailsCtrl.name.meaning.meaningInfo}}</li>
+            <li>
+                <div>
+                    {{nameDetailsCtrl.name.meaning.meaningInfo}}
+                </div>
+                <section layout="row">
+                    <md-button class="labels md-raised"><i class="md-thumb-up md-lg"></i>| {{ nameDetailsCtrl.getRealValue(nameDetailsCtrl.name.upVotes) }}</md-button>
+                    <md-button class="labels md-raised"><i class="md-visibility md-lg"></i>| {{ nameDetailsCtrl.getRealValue(nameDetailsCtrl.name.downVotes) }}</md-button>
+                </section>
+            </li>
         </ul>
     </div>
     <section layout="row">
