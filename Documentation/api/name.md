@@ -1,6 +1,6 @@
 * Get all names   
 
-1. URL: /api/name
+###URL: /api/name
 
 **Request:**
 
@@ -37,7 +37,9 @@ NA
 }]
 ```
 
-2. URL: /api/name/:nameId
+* Get a name by Id
+
+###URL: /api/name/:nameId
 
 **Request:**
 
@@ -76,7 +78,7 @@ NA
 
 * POST a new name
 
-URL: /api/name
+###URL: /api/name
 
 **Request:**
 
