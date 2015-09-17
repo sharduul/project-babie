@@ -49,7 +49,7 @@ function Config($stateProvider, $urlRouterProvider){
       controller: 'homeController as home'
     })
     .state('app.nameDetails', {
-      url: "/nameDetails",
+      url: "/nameDetails/:nameId",
       templateUrl: "templates/nameDetails.html",
       controller: 'nameDetailsController as nameDetailsCtrl'
     });

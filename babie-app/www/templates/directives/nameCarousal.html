@@ -1,7 +1,7 @@
 <md-card>
 <div layout="row" layout-margin layout-fill>
 	<div flex="50">
-		<a ng-href="#/app/nameDetails"><h3>{{nameCarousal.name.nameInfo}}</h3></a>
+		<a ng-href="#/app/nameDetails/{{nameCarousal.name.nameId}}"><h3>{{nameCarousal.name.nameInfo}}</h3></a>
 	</div>
 	<div flex>
         <md-button class="labels md-raised" ng-repeat="label in nameCarousal.name.labels">{{label.labelInfo}}</md-button>

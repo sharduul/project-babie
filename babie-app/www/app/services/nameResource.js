@@ -17,7 +17,7 @@ function NameResource($resource, helperService) {
 
 	function name(){
 
-		return $resource(helperService.baseUrl + 'api/name/:name', { nameId: '@nameId' }, {
+		return $resource(helperService.baseUrl + 'api/name/:nameId', { nameId: '@nameId' }, {
 			get: { method: 'GET', isArray: true, cache: false }
 		});
 

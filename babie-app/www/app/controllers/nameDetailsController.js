@@ -6,34 +6,25 @@
 		.module('babie.controllers')
 		.controller('nameDetailsController', nameDetailsController);
 
-	nameDetailsController.$inject = ['apiResource', 'helperService'];
+	nameDetailsController.$inject = ['apiResource', '$stateParams'];
 
-	function nameDetailsController(apiResource, helperService) {
+	function nameDetailsController(apiResource, $stateParams) {
 		var vm = this;
-		vm.alphabeticNames = [];
-
-		var alphabetArray = helperService.alphabetString().split('');
+		vm.name = {};
 
 		(function(){
 
-			// get all the names
-			apiResource.name.name().get({}, function(result){
+			// TODO: get the name by nameId
+			//apiResource.name.name().get({ nameId: $stateParams.nameId}, function(result){
+			apiResource.name.name().get({ }, function(result){
 
-				var index = -1;
-				angular.forEach(alphabetArray, function(currentAlphabet){
-					
-					index++;
-
-					// build a map of names... each row starting with different alphabet
-					vm.alphabeticNames[index] = _.filter(result, function(item){
-						return helperService.regexProvider.startsWith(currentAlphabet).test(item.nameInfo);
-					});
-				});
+				vm.name = result[0];
+				console.log(vm.name);
+				
 
 			});
 
 		})();
-		
 	}
 
 })();
