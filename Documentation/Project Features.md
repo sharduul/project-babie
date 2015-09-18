@@ -1,17 +1,18 @@
 ## Features
-1. Add new name
-2. Add meaning for the name
-3. Search names
-4. View name
-5. Edit name
-6. Edit meaning for the name
-7. Labels (categories/tags)
-8. Create family
-9. Add members to family
-10. Edit family members (by inviting)
-11. Vote the name
-12. Set preferences for better search results.... ethnicity, gender, starting letter etc...
-13. Suggest name based on current viewed name... based on meaning, similar sounding, same letter
+* Add new name
+* Add meaning for the name
+* Search names
+* View name
+* Edit name
+* Edit meaning for the name
+* Labels (categories/tags)
+* Create family
+* Add members to family
+* Edit family members (by inviting)
+* Vote the name
+* Set preferences for better search results.... ethnicity, gender, starting letter etc...
+* Suggest name based on current viewed name... based on meaning, similar sounding, same letter
+* Assign name to my baby
 
 
 ###Optional (after the main features are implemented)
