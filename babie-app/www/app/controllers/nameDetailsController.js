@@ -36,10 +36,10 @@
 
         vm.name = {  
 		    "nameId":41,
-		    "nameInfo":"Alpa",
+		    "nameInfo":"Alpapappa",
 		    "gender":"girl",
 		    "labels":[  
-				"label1", "very big label", "label again"
+				"label1", "very big label", "label again", "veryg label", "adsf", "adsfsdf", "asdfsdfdf", "vedryg label", "adsdf"
 		    ],
 		    "upVote": 210,
 	        "downVote": 19,

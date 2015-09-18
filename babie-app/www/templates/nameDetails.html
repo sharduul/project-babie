@@ -1,7 +1,13 @@
 <div layout="row" layout-sm="column" class="container">
-    <div flex class="pad-sides-sm">
-        <h2>{{nameDetailsCtrl.name.nameInfo}}</h2>
+    <div layout="row" layout-fill class="position-relative">
+        <div class="pad-sides-sm">
+            <h2>{{nameDetailsCtrl.name.nameInfo}}</h2>
+        </div>
+        <div flex class="label-tag pad-bottom-sm pad-left-sm">
+            <md-button class="labels md-raised" ng-repeat="label in nameDetailsCtrl.name.labels">{{label}}</md-button>
+        </div>
     </div>
+    
     <div flex class="meaning-container pad-sides-sm">
         <ul ng-repeat="meaning in nameDetailsCtrl.name.meaning">
             <li>
