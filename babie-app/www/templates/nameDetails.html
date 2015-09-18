@@ -5,18 +5,18 @@
     <div flex class="meaning-container pad-sides-sm">
         <ul ng-repeat="meaning in nameDetailsCtrl.name.meaning">
             <li>
-                <div layout="row" layout-margin layout-fill layout-padding>
-				 	<div id="">
+                <div layout="row" layout-fill >
+				 	<div id="" class="pad-left-sm">
 					    <div class=""><i class="zmdi zmdi-caret-up zmdi-hc-2x"></i></div>
 					    <div class="">300</div>
 					    <div class=""><i class="zmdi zmdi-caret-down zmdi-hc-2x"></i></div>
 					</div>
-				  	<div flex>{{meaning.meaningInfo}}</div>
+				  	<div flex class="pad-top-sm pad-left-md">{{meaning.meaningInfo}}</div>
 				</div>
             </li>
         </ul>
     </div>
-    <section layout="row">
+    <section layout="row" class="pad-top-sm pad-left-sm">
         <md-button class="labels md-raised">{{ nameDetailsCtrl.getRealValue(nameDetailsCtrl.name.upVote) }} <i class="zmdi zmdi-long-arrow-up"></i></md-button>
         <md-button class="labels">{{ nameDetailsCtrl.getRealValue(nameDetailsCtrl.name.viewCount) }} views</md-button>
         <md-button class="labels">{{ nameDetailsCtrl.getRealValue(nameDetailsCtrl.name.assignedByCount) }} named babies</md-button>
