@@ -11,8 +11,8 @@
 	<div class="ellipsis" flex><p>{{nameCarousal.name.meaning.meaningInfo}}</p></div>
 </div>
 <section layout="row">
-    <md-button class="labels md-raised"><i class="md-thumb-up md-lg"></i>| {{ nameCarousal.getRealValue(nameCarousal.name.upVotes) }}</md-button>
-    <md-button class="labels md-raised"><i class="md-visibility md-lg"></i>| {{ nameCarousal.getRealValue(nameCarousal.name.viewCount) }}</md-button>
-    <md-button class="labels md-raised"><i class="md-done md-lg"></i>| {{ nameCarousal.getRealValue(nameCarousal.name.assignedByCount) }}</md-button>
-</section>
+        <md-button class="labels md-raised"><i class="zmdi zmdi-long-arrow-up"></i> {{ nameCarousal.getRealValue(nameCarousal.name.upVote) }}</md-button>
+        <md-button class="labels">{{ nameCarousal.getRealValue(nameCarousal.name.viewCount) }} views</md-button>
+        <md-button class="labels">{{ nameCarousal.getRealValue(nameCarousal.name.assignedByCount) }} named babies</md-button>
+    </section>
 </md-card>

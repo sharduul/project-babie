@@ -19,8 +19,8 @@
 			//apiResource.name.name().get({ nameId: $stateParams.nameId}, function(result){
 			apiResource.name.name().get({ }, function(result){
 
-				vm.name = result[0];
-				console.log(vm.name);
+				//vm.name = result[0];
+				//console.log(vm.name);
 
 			});
 
@@ -29,6 +29,50 @@
         function getRealValue(value){
             return value === undefined ? 0 : value;
         }
+
+
+
+
+
+        vm.name = {  
+		    "nameId":41,
+		    "nameInfo":"Alpa",
+		    "gender":"girl",
+		    "labels":[  
+				"label1", "very big label", "label again"
+		    ],
+		    "upVote": 210,
+	        "downVote": 19,
+		    "meaning":[
+			{  
+		        "meaningId":9,
+		        "meaningInfo":"Little; Small",
+		        "upVote": 20,
+		        "downVote": 19
+		    },
+			{  
+		        "meaningId":9,
+		        "meaningInfo":"The JSON Formatter was created to help with debugging. As JSON data is often output without line breaks to save space.The JSON Formatter was created to help with debugging. As JSON data is often output witho.",
+		        "upVote": 120,
+		        "downVote": 19
+		    },
+			{  
+		        "meaningId":9,
+		        "meaningInfo":"Little; Small",
+		        "upVote": 20,
+		        "downVote": 119
+		    },
+			{  
+		        "meaningId":9,
+		        "meaningInfo":"Little; Small",
+		        "upVote": 210,
+		        "downVote": 19
+		    }]
+		};
+
 	}
+
+
+	
 
 })();
