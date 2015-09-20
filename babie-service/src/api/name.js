@@ -1,6 +1,6 @@
 var Name = require('../models').nameModel;
 
-module.exports = function(app, counter, dbqueries){
+module.exports = function(app){
 
     // API to get a name by nameId
     app.get('/api/name/:nameId', function(req, res){
@@ -24,36 +24,6 @@ module.exports = function(app, counter, dbqueries){
             }
             res.send(names);
 
-            //console.log(typeof names);
-            //console.log(names[0]);
-            //
-            //var tempName = names[0];
-            //
-            //console.log(typeof tempName.meaning);
-            //console.log(tempName.meaning);
-            //
-            //tempName.meaning.push({
-            //    "meaningId": 9,
-            //    "meaningInfo": "Little; Small"
-            //});
-            //
-            ////var meaningArray = [];
-            ////meaningArray.push(tempName.meaning);
-            //
-            ////console.log(tempName.nameId);
-            //
-            //
-            //
-            //
-            //
-            //
-            //
-            //
-            //
-            ////Name.find({nameId: tempName.nameId}).update({nameId: tempName.nameId}, {meaning: meaningArray}, { upsert: true });
-            ////Name.update({nameId: tempName.nameId}, {meaning: meaningArray}, { upsert: true });
-
-
             console.log("success /name");
         });
     });
@@ -61,7 +31,7 @@ module.exports = function(app, counter, dbqueries){
 	
 
 
-	// for reference.. will be needed in the future..
+	// TODO: for reference.. will be needed in the future..
 	// app.post('/api/name', function(req, res){
 
 
@@ -77,6 +47,7 @@ module.exports = function(app, counter, dbqueries){
 	// });
 
 
+    // TODO: for reference.. will be needed in the future..
     //// UPDATE QUERY... use it to implement EDIT APIs
     //tempName.meaning.push({
     //    "meaningId": 9,
