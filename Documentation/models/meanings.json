@@ -1,9 +1,10 @@
 {
   "meaningId": 1,
   "meaningInfo": "victory",
-  "meaningByUser": {
+  "user": {
     "userId": 1,
     "userInfo": "Ajay"
   },
-  "upvotes": 30
+  "upvote": 30,
+  "downvote": 30
 }
