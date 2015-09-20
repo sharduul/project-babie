@@ -8,6 +8,7 @@ NA
 
 **Response:**
 ```json
+
 [{
 	"nameId": 1,
 	"nameInfo": "vijay",
@@ -35,6 +36,7 @@ NA
 	],
 	"assignedByCount": 30
 }]
+
 ```
 
 ###Get a name by Id
@@ -47,6 +49,7 @@ NA
 
 **Response:**
 ```json
+
 {
 	"nameId": 1,
 	"nameInfo": "vijay",
@@ -74,6 +77,7 @@ NA
 	],
 	"assignedByCount": 30
 }
+
 ```
 
 ###POST a new name
@@ -106,7 +110,6 @@ NA
     "assignedByCount": 0
 }
 
-
 ```
 
 **Response:**
@@ -136,12 +139,34 @@ NA
 	],
 	"assignedByCount": 0
 }
+
 ```
 
 ###POST a new meaning to given name
 
 **URL: /api/name/:nameId/meaning**
+- this API will change
+- new information like user details, votes, etc will be added to it...
 
 **Request:**
 
+```json
+
+{
+	"meaningInfo": "victory"
+}
+
+```
+
 **Response:**
+
+```json
+
+{
+	"meaningId": 1,
+	"meaningInfo": "victory",
+	"upVote": 20,
+        "downVote": 19
+}
+
+```
