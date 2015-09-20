@@ -18,7 +18,12 @@ module.exports = function(app){
 	// API to get all the names
 	app.get('/api/name', function(req, res){
 
-		Name.find({}, function(err, names){
+        // get the pagination params from provided query params- page and size
+        paginationParams = getPaginationParams(req.query);
+
+        // skip and limit params are used to implement pagination
+        // Name.find(query, fields, {skip, limit}, callback function)
+		Name.find({}, {}, { skip: paginationParams.skip, limit: paginationParams.limit }, function(err, names){
             if(err){
                 return res.send(err);
             }
@@ -28,6 +33,14 @@ module.exports = function(app){
         });
     });
 
+
+    function getPaginationParams(requestParams){
+        var paginationParams = {};
+        paginationParams.skip = requestParams.page * requestParams.size - requestParams.size;
+        paginationParams.limit = requestParams.size;
+
+        return paginationParams;
+    }
 	
 
 
