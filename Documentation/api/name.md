@@ -1,6 +1,6 @@
 ###Get all names   
 
-**URL: /api/name**
+**URL: api/name?page=1&size=3**
 
 **Request:**
 
