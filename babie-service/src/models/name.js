@@ -5,10 +5,12 @@ var Schema = mongoose.Schema;
 var NameSchema = new Schema({
 	nameId: {type: Number, unique: true, require: true},
 	nameInfo: {type: String},
-	meaning: {
-		meaningId: {type: Number},
-		meaningInfo: {type: String}
-	},
+	meaning: [
+        {
+		    meaningId: {type: Number},
+		    meaningInfo: {type: String}
+	    }
+    ],
 	upVote: {type: Number},
 	viewCount: {type: Number},
 	labels: [

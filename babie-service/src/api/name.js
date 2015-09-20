@@ -23,6 +23,37 @@ module.exports = function(app, counter, dbqueries){
                 return res.send(err);
             }
             res.send(names);
+
+            //console.log(typeof names);
+            //console.log(names[0]);
+            //
+            //var tempName = names[0];
+            //
+            //console.log(typeof tempName.meaning);
+            //console.log(tempName.meaning);
+            //
+            //tempName.meaning.push({
+            //    "meaningId": 9,
+            //    "meaningInfo": "Little; Small"
+            //});
+            //
+            ////var meaningArray = [];
+            ////meaningArray.push(tempName.meaning);
+            //
+            ////console.log(tempName.nameId);
+            //
+            //
+            //
+            //
+            //
+            //
+            //
+            //
+            //
+            ////Name.find({nameId: tempName.nameId}).update({nameId: tempName.nameId}, {meaning: meaningArray}, { upsert: true });
+            ////Name.update({nameId: tempName.nameId}, {meaning: meaningArray}, { upsert: true });
+
+
             console.log("success /name");
         });
     });
@@ -45,6 +76,16 @@ module.exports = function(app, counter, dbqueries){
 
 	// });
 
+
+    //// UPDATE QUERY... use it to implement EDIT APIs
+    //tempName.meaning.push({
+    //    "meaningId": 9,
+    //    "meaningInfo": "Little; Small"
+    //});
+    //Name.update({nameId:tempName.nameId}, {$set:{meaning: tempName.meaning}}, {upsert:true}, function(error, result){
+    //    console.log(error);
+    //    console.log(result);
+    //});
 
 // ********************* private functions **********************************************
 
