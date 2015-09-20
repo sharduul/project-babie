@@ -44,24 +44,15 @@ module.exports = function(app){
     });
 
 
-
-	
-
-
-	// TODO: for reference.. will be needed in the future..
-	// app.post('/api/name', function(req, res){
+	 app.post('/api/name', function(req, res){
 
 
-		// var testName = {
-		// 	nameId: 1,
-		// 	nameInfo: "test success"
-		// };
+	 	Name.create(testName, function(err){
+	 		console.log("error: " + err);
+	 	});
 
-	// 	Name.create(testName, function(err){
-	// 		console.log("error: " + err);
-	// 	});
 
-	// });
+	 });
 
 
     // TODO: for reference.. will be needed in the future..
@@ -97,5 +88,12 @@ module.exports = function(app){
         return operands;
     }
 
+
+// ********************** sample data for testing ***********************
+
+    var testName = {
+        nameId: 1,
+        nameInfo: "test success"
+    };
 
 };

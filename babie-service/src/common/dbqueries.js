@@ -10,9 +10,7 @@ var exports = module.exports;
 exports.getNextSequence = function(model){
 
 	return Counter.findByIdAndUpdate(model.modelName + 'Id', {$inc: {seq:1}}, function (err, data) {
-
 		return data;
-
 	});
 
 };
@@ -21,4 +19,4 @@ exports.SaveCollection = function(model, collection){
 
 	return model.create(collection);
 
-}
+};
