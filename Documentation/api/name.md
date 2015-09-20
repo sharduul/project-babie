@@ -82,4 +82,58 @@ NA
 
 **Request:**
 
+```
+{
+    "nameInfo": "vijay",
+    "meaning": [
+        {
+            "meaningId": 1,
+            "meaningInfo": "victory"
+        }
+    ],
+    "upVotes": 0,
+    "viewCount": 0,
+    "labels": [
+        {
+            "labelId": 1,
+            "labelInfo": "god"
+        },
+        {
+            "labelId": 2,
+            "labelInfo": "boy"
+        }
+    ],
+    "assignedByCount": 0
+}
+
+
+```
+
 **Response:**
+
+```json
+
+{
+	"nameId": 1,
+	"nameInfo": "vijay",
+	"meaning": [
+		{
+			"meaningId": 1,
+			"meaningInfo": "victory"
+		}
+	],
+	"upVotes": 0,
+	"viewCount": 0,
+	"labels": [
+		{
+			"labelId": 1,
+			"labelInfo": "god"
+		},
+		{
+			"labelId": 2,
+			"labelInfo": "boy"
+		}
+	],
+	"assignedByCount": 0
+}
+```
