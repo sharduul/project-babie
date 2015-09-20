@@ -1,3 +1,10 @@
+- may be we might not need this schema
+- because meaning as an independent entity does not make any sense
+- it will always be a part of some name
+- it will not repeat... that it- not reused in multiple places
+- therefore, when editing a meaning... just edit the meaning child property in the name model
+
+
 {
   "meaningId": 1,
   "meaningInfo": "victory",
