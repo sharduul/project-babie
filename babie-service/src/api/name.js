@@ -18,12 +18,22 @@ module.exports = function(app){
 	// API to get all the names
 	app.get('/api/name', function(req, res){
 
+        // get the lhs and the rhs of the filter
+        var operands = getOperands(req.query.filter);
+
+        var filterObject = {};
+
+        // '^' takes care of "starts with" filter
+        // if you don't provide '^'... then it will run "contains" filter
+        filterObject.nameInfo = new RegExp('^' + operands.rhs, "i");
+
+
         // get the pagination params from provided query params- page and size
-        paginationParams = getPaginationParams(req.query);
+        var paginationParams = getPaginationParams(req.query);
 
         // skip and limit params are used to implement pagination
         // Name.find(query, fields, {skip, limit}, callback function)
-		Name.find({}, {}, { skip: paginationParams.skip, limit: paginationParams.limit }, function(err, names){
+		Name.find(filterObject, {}, { skip: paginationParams.skip, limit: paginationParams.limit }, function(err, names){
             if(err){
                 return res.send(err);
             }
@@ -34,13 +44,7 @@ module.exports = function(app){
     });
 
 
-    function getPaginationParams(requestParams){
-        var paginationParams = {};
-        paginationParams.skip = requestParams.page * requestParams.size - requestParams.size;
-        paginationParams.limit = requestParams.size;
 
-        return paginationParams;
-    }
 	
 
 
@@ -72,6 +76,26 @@ module.exports = function(app){
     //});
 
 // ********************* private functions **********************************************
+
+    function getPaginationParams(requestParams){
+        var paginationParams = {};
+        paginationParams.skip = requestParams.page * requestParams.size - requestParams.size;
+        paginationParams.limit = requestParams.size;
+
+        return paginationParams;
+    }
+
+    // utility function to get the operands of the filter provided in the request
+    function getOperands(expression){
+        var operands = expression.split('equals').map(function (item){
+            return item.trim()
+        });
+
+        operands.lhs = operands[0];
+        operands.rhs = operands[1];
+
+        return operands;
+    }
 
 
 };
