@@ -137,3 +137,11 @@ NA
 	"assignedByCount": 0
 }
 ```
+
+###POST a new meaning to given name
+
+**URL: /api/name/:nameId/meaning**
+
+**Request:**
+
+**Response:**
