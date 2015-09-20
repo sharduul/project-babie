@@ -82,7 +82,7 @@ NA
 
 **Request:**
 
-```
+```json
 {
     "nameInfo": "vijay",
     "meaning": [
