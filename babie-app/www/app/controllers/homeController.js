@@ -17,7 +17,7 @@
 		(function(){
 
 			// get all the names
-			apiResource.name.name().get({}, function(result){
+			apiResource.name.name().get({filter: "search equals bo", page: 1, size: 10}, function(result){
 
 				var index = -1;
 				angular.forEach(alphabetArray, function(currentAlphabet){
