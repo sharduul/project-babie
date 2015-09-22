@@ -4,7 +4,7 @@ var Schema = mongoose.Schema;
 
 var NameSchema = new Schema({
 	nameId: {type: Number, unique: true, require: true},
-	nameInfo: {type: String},
+	nameInfo: {type: String, unique: true, require: true},
 	meaning: [
         {
 		    meaningId: {type: Number},

@@ -9,7 +9,8 @@ module.exports = function(app){
 	// require all the utility services here
 	var dbqueries = require('../common/dbqueries.js');
 
+
 	// require all the apis here
-	require('./name.js')(app);
+	require('./name.js')(app, dbqueries);
 	
 };

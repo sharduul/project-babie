@@ -9,9 +9,9 @@ var exports = module.exports;
 
 exports.getNextSequence = function(model){
 
-	return Counter.findByIdAndUpdate(model.modelName + 'Id', {$inc: {seq:1}}, function (err, data) {
-		return data;
-	});
+    // with new Mongoose update this statement returns a query
+    // you have to exec() it to get the promise.. and then do stuff you want
+    return Counter.findByIdAndUpdate(model.modelName + 'Id', {$inc: {seq:1}});
 
 };
 

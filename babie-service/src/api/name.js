@@ -1,6 +1,6 @@
 var Name = require('../models').nameModel;
 
-module.exports = function(app){
+module.exports = function(app, dbqueries){
 
     // API to get a name by nameId
     app.get('/api/name/:nameId', function(req, res){
@@ -47,11 +47,25 @@ module.exports = function(app){
     // API to add a new name to the database
 	 app.post('/api/name', function(req, res){
 
+         // get the nameId for the new name before saving it to the database
+         dbqueries.getNextSequence(Name).exec().then(function(data){
 
-	 	Name.create(testName, function(err){
-	 		console.log("error: " + err);
-	 	});
+             testName.nameId = data.seq;
 
+             Name.create(testName, function(err){
+
+                 // TODO: create a common message service to return sensible errors and success data
+                 // if there is any DB error send it to the client
+                 if(err){
+                     res.json(err);
+                 }
+                 else{
+                     // if the name record is created successfully, return the name object
+                     res.json(testName);
+                 }
+
+             });
+        });
 
 	 });
 
@@ -93,8 +107,26 @@ module.exports = function(app){
 // ********************** sample data for testing ***********************
 
     var testName = {
-        nameId: 1,
-        nameInfo: "test success"
+        "nameInfo": "aaaa",
+        "meaning": [
+            {
+                "meaningId": 1,
+                "meaningInfo": "aaaa"
+            }
+        ],
+        "upVotes": 0,
+        "viewCount": 0,
+        "labels": [
+            {
+                "labelId": 1,
+                "labelInfo": "aaaa"
+            },
+            {
+                "labelId": 2,
+                "labelInfo": "aaaa"
+            }
+        ],
+        "assignedByCount": 0
     };
 
 };
