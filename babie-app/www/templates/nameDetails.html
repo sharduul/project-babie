@@ -1,30 +1,40 @@
-<div layout="row" layout-sm="column" class="container">
-    <div layout="row" layout-fill class="position-relative">
-        <div class="pad-sides-sm">
-            <h2>{{nameDetailsCtrl.name.nameInfo}}</h2>
+<ion-scroll style="height: 500px">
+    <div layout="row" layout-sm="column" class="container footer-room">
+        <div layout="row" layout-fill class="position-relative">
+            <div class="pad-sides-sm">
+                <h2>{{nameDetailsCtrl.name.nameInfo}}</h2>
+            </div>
+            <div flex class="label-tag pad-bottom-sm pad-left-sm">
+                <md-button class="labels md-raised" ng-repeat="label in nameDetailsCtrl.name.labels">{{label}}</md-button>
+            </div>
         </div>
-        <div flex class="label-tag pad-bottom-sm pad-left-sm">
-            <md-button class="labels md-raised" ng-repeat="label in nameDetailsCtrl.name.labels">{{label}}</md-button>
+        <div flex class="meaning-container pad-sides-sm">
+            <ul ng-repeat="meaning in nameDetailsCtrl.name.meaning">
+                <li>
+                    <div layout="row" layout-fill >
+    				 	<div id="" class="pad-left-sm">
+    					    <div class=""><i class="zmdi zmdi-caret-up zmdi-hc-2x"></i></div>
+    					    <div class="">300</div>
+    					    <div class=""><i class="zmdi zmdi-caret-down zmdi-hc-2x"></i></div>
+    					</div>
+    				  	<div flex class="pad-top-sm pad-left-md">{{meaning.meaningInfo}}</div>
+    				</div>
+                </li>
+            </ul>
         </div>
+        <section layout="row" class="pad-top-sm pad-left-sm">
+            <md-button class="labels md-raised">{{ nameDetailsCtrl.getRealValue(nameDetailsCtrl.name.upVote) }} <i class="zmdi zmdi-long-arrow-up"></i></md-button>
+            <md-button class="labels">{{ nameDetailsCtrl.getRealValue(nameDetailsCtrl.name.viewCount) }} views</md-button>
+            <md-button class="labels">{{ nameDetailsCtrl.getRealValue(nameDetailsCtrl.name.assignedByCount) }} named babies</md-button>
+        </section>
     </div>
-    
-    <div flex class="meaning-container pad-sides-sm">
-        <ul ng-repeat="meaning in nameDetailsCtrl.name.meaning">
-            <li>
-                <div layout="row" layout-fill >
-				 	<div id="" class="pad-left-sm">
-					    <div class=""><i class="zmdi zmdi-caret-up zmdi-hc-2x"></i></div>
-					    <div class="">300</div>
-					    <div class=""><i class="zmdi zmdi-caret-down zmdi-hc-2x"></i></div>
-					</div>
-				  	<div flex class="pad-top-sm pad-left-md">{{meaning.meaningInfo}}</div>
-				</div>
-            </li>
-        </ul>
+</ion-scroll>
+<ion-footer-bar align-title="left" class="bar-assertive">
+    <div class="buttons">
+        <button class="button">Left Button</button>
     </div>
-    <section layout="row" class="pad-top-sm pad-left-sm">
-        <md-button class="labels md-raised">{{ nameDetailsCtrl.getRealValue(nameDetailsCtrl.name.upVote) }} <i class="zmdi zmdi-long-arrow-up"></i></md-button>
-        <md-button class="labels">{{ nameDetailsCtrl.getRealValue(nameDetailsCtrl.name.viewCount) }} views</md-button>
-        <md-button class="labels">{{ nameDetailsCtrl.getRealValue(nameDetailsCtrl.name.assignedByCount) }} named babies</md-button>
-    </section>
-</div>
+        <h1 class="title">Title!</h1>
+    <div class="buttons" ng-click="doSomething()">
+        <button class="button">Right Button</button>
+    </div>
+</ion-footer-bar>
