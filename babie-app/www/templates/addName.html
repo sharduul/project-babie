@@ -3,18 +3,18 @@
         <md-content class="md-padding">
             <div flex-sm="100" flex-gt-sm="80" layout-sm="column">
                 <h2>Add Name</h2>
-                <form name="contactForm" data-ng-submit="sendMail()">
+                <form name="contactForm" data-ng-submit="addNameCtrl.addName()">
                     <md-input-container>
                         <label>Enter name here:</label>
-                        <input ng-model="name" required>
+                        <input ng-model="addNameCtrl.name.nameInfo" required>
                     </md-input-container>
                     <md-input-container>
                         <label>Enter meaning here:</label>
-                        <textarea ng-model="name" columns="1" md-maxlength="90" required></textarea>
+                        <textarea ng-model="addNameCtrl.name.meaningInfo" columns="1" md-maxlength="90" required></textarea>
                     </md-input-container>
                     <md-input-container>
                         <label>Enter labels here:</label>
-                        <input ng-model="label" required>
+                        <input ng-model="addNameCtrl.name.labelText" required>
                     </md-input-container>
 
                     <md-button type="submit" class="md-raised md-primary">Add Name</md-button>
