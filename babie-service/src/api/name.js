@@ -44,6 +44,7 @@ module.exports = function(app){
     });
 
 
+    // API to add a new name to the database
 	 app.post('/api/name', function(req, res){
 
 
