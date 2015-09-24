@@ -1,5 +1,5 @@
-<ion-scroll style="height: 500px">
-    <div layout="row" layout-sm="column" class="container footer-room">
+<ion-content >
+    <div layout="row" layout-sm="column" class="container">
         <div layout="row" layout-fill class="position-relative">
             <div class="pad-sides-sm">
                 <h2>{{nameDetailsCtrl.name.nameInfo}}</h2>
@@ -28,14 +28,16 @@
             <md-button class="labels">{{ nameDetailsCtrl.getRealValue(nameDetailsCtrl.name.assignedByCount) }} named babies</md-button>
         </section>
     </div>
-</ion-scroll>
-<ion-footer-bar class="bar-balanced">
-    <div class="col-80">
-        <md-input-container>
-            <input ng-model="addNameCtrl.name.nameInfo">
-        </md-input-container>
-    </div>
-    <div class="buttons col-offset-5" ng-click="nameDetailsCtrl.addMeaning()">
-        <md-button type="submit" class="md-raised md-primary">Add</md-button>
-    </div>
-</ion-footer-bar>
+
+</ion-content>
+
+<!--<ion-footer-bar class="bar-balanced">-->
+    <!--<div class="col-80">-->
+        <!--<md-input-container>-->
+            <!--<input ng-model="addNameCtrl.name.nameInfo">-->
+        <!--</md-input-container>-->
+    <!--</div>-->
+    <!--<div class="buttons col-offset-5" ng-click="nameDetailsCtrl.addMeaning()">-->
+        <!--<md-button type="submit" class="md-raised md-primary">Add</md-button>-->
+    <!--</div>-->
+<!--</ion-footer-bar>-->
