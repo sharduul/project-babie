@@ -23,7 +23,7 @@
             </ul>
         </div>
         <section layout="row" class="pad-top-sm pad-left-sm">
-            <md-button class="labels md-raised">{{ nameDetailsCtrl.getRealValue(nameDetailsCtrl.name.upVote) }} <i class="zmdi zmdi-long-arrow-up"></i></md-button>
+            <md-button class="labels md-raised" ng-click="nameDetailsCtrl.upVote()">{{ nameDetailsCtrl.getRealValue(nameDetailsCtrl.name.upVote) }} <i class="zmdi zmdi-long-arrow-up"></i></md-button>
             <md-button class="labels">{{ nameDetailsCtrl.getRealValue(nameDetailsCtrl.name.viewCount) }} views</md-button>
             <md-button class="labels">{{ nameDetailsCtrl.getRealValue(nameDetailsCtrl.name.assignedByCount) }} named babies</md-button>
         </section>

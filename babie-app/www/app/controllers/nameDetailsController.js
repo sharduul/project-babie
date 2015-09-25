@@ -6,11 +6,12 @@
 		.module('babie.controllers')
 		.controller('nameDetailsController', nameDetailsController);
 
-	nameDetailsController.$inject = ['apiResource', '$stateParams'];
+	nameDetailsController.$inject = ['apiResource', '$stateParams', '$state'];
 
-	function nameDetailsController(apiResource, $stateParams) {
+	function nameDetailsController(apiResource, $stateParams, $state) {
 		var vm = this;
 		vm.name = {};
+		vm.upVote = upVote;
         vm.getRealValue = getRealValue;
 
 		(function(){
@@ -31,6 +32,9 @@
         }
 
 
+    	function upVote(){
+    		$state.go('app.home');
+    	}
 
 
 

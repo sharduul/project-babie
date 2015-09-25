@@ -10,9 +10,9 @@ angular
 
 
 Config.$inject = ['$stateProvider', '$urlRouterProvider'];
-Run.$inject = ['$ionicPlatform'];
+Run.$inject = ['$ionicPlatform', '$rootScope'];
 
-function Run($ionicPlatform) {
+function Run($ionicPlatform, $rootScope) {
   
   $ionicPlatform.ready(function() {
 
@@ -24,6 +24,15 @@ function Run($ionicPlatform) {
     if(window.StatusBar) {
       StatusBar.styleDefault();
     }
+  });
+
+  // this event is fired whenever there is change of route state
+  $rootScope.$on('$stateChangeSuccess',  function(e, stateData) {
+
+    // tell the event listeners that the state is now changed
+    // this is mainly used to hide/unhide the add meaning box... and to show/hide header menu items
+    $rootScope.$emit('stateChanged', stateData.name);
+
   });
 
 }
@@ -41,7 +50,8 @@ function Config($stateProvider, $urlRouterProvider){
     .state('app', {
       url: "/app",
       abstract: true,
-      templateUrl: "templates/header.html"
+      templateUrl: "templates/header.html",
+      controller: "headerController as headerCtrl" // this is the controller for header - top and side
     })
     .state('app.home', {
       url: "/home",

@@ -15,7 +15,7 @@
 <!-- this is the footer of the application
  for now it will be used for:
  - meaning input box on nameDetails screen -->
-<ion-footer-bar class="bar-balanced">
+<ion-footer-bar class="bar-balanced" ng-if="headerCtrl.stateIs === 'app.nameDetails'">
     <div class="col-80">
         <md-input-container>
             <input ng-model="addNameCtrl.name.nameInfo">
