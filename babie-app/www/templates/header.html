@@ -10,3 +10,18 @@
 
 <!-- all the views will be loaded here -->
 <ion-nav-view class="testClass"></ion-nav-view>
+
+
+<!-- this is the footer of the application
+ for now it will be used for:
+ - meaning input box on nameDetails screen -->
+<ion-footer-bar class="bar-balanced">
+    <div class="col-80">
+        <md-input-container>
+            <input ng-model="addNameCtrl.name.nameInfo">
+        </md-input-container>
+    </div>
+    <div class="buttons col-offset-5" ng-click="nameDetailsCtrl.addMeaning()">
+        <md-button type="submit" class="md-raised md-primary">Add</md-button>
+    </div>
+</ion-footer-bar>
