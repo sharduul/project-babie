@@ -27,3 +27,4 @@
 9. Comments on the name and its meaning
 10. Report the name or meaning .. if it's wrong or not appropriate
 11. "public" family.. where every one can join
+12. baby of the month
