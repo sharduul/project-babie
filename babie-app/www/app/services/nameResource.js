@@ -18,7 +18,8 @@ function NameResource($resource, helperService) {
 	function name(){
 
 		return $resource(helperService.baseUrl + 'api/name/:nameId', { nameId: '@nameId' }, {
-			get: { method: 'GET', isArray: true, cache: false }
+			get: { method: 'GET', isArray: true, cache: false },
+			save: { method: 'POST' }
 		});
 
 		// ********* for reference when you implement login and have tokens *********

@@ -22,9 +22,16 @@
 		})();
 
 		function addName(){
-			
+
+			console.log(vm.name);
+
+			apiResource.name.name().save(vm.name, function(result){
+				console.log(result);
+            },
+            function (error) {
+			    console.log(result);
+			});
 		}
-		
 	}
 
 })();
