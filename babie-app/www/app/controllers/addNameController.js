@@ -6,9 +6,9 @@
 		.module('babie.controllers')
 		.controller('addNameController', addNameController);
 
-	addNameController.$inject = ['apiResource'];
+	addNameController.$inject = ['apiResource', '$state'];
 
-	function addNameController(apiResource) {
+	function addNameController(apiResource, $state) {
 		var vm = this;
 		vm.name = {};
 		vm.addName = addName;
@@ -23,13 +23,12 @@
 
 		function addName(){
 
-			console.log(vm.name);
-
 			apiResource.name.name().save(vm.name, function(result){
-				console.log(result);
+
+                $state.go('app.nameDetails', { nameId: result.nameId });
             },
             function (error) {
-			    console.log(result);
+			    console.log(error);
 			});
 		}
 	}
