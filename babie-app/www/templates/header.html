@@ -17,10 +17,8 @@
  - meaning input box on nameDetails screen -->
 <!-- <ion-footer-bar class="bar-balanced" ng-if="headerCtrl.stateIs === 'app.nameDetails'"> -->
 <ion-footer-bar class="bar-balanced">
-
-	<input ng-model="addNameCtrl.name.nameInfo" class="meaning-input col-80" placeholder="Enter new meaning here...">
-	
-    <div class="buttons col-offset-5" ng-click="nameDetailsCtrl.addMeaning()">
-        <md-button type="submit" class="md-raised md-primary">Add</md-button>
-    </div>
+	<form name="contactForm" ng-submit="headerCtrl.addName()">
+		<input ng-model="headerCtrl.meaning.meaningInfo" class="meaning-input col-80" placeholder="Enter new meaning here..." required>
+		<md-button type="submit" class="md-raised md-primary col-offset-5">Add</md-button>
+	</form>
 </ion-footer-bar>
