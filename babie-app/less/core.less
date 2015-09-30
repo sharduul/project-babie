@@ -93,3 +93,34 @@ a {
 		margin-top: 5px;
 	}
 }
+
+// to make it look like md-input-container
+// but use just a placeholder instead of any label
+.meaning-input{
+	border-width: 0 0 1px;
+    background: 0 0;
+    border-color: rgba(0,0,0,0.12);
+    width: 100%;
+}
+
+
+// change the color of the placeholder
+.meaning-input::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color: white;
+}
+
+.meaning-input:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+   color: white;
+   opacity: 1;
+}
+
+.meaning-input::-moz-placeholder { /* Mozilla Firefox 19+ */
+   color: white;
+   opacity: 1;
+}
+
+.meaning-input:-ms-input-placeholder { /* Internet Explorer 10-11 */
+   color: white;
+}
+
+

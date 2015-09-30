@@ -34,6 +34,12 @@ function NameResource($resource, helperService) {
 		
 	}
 
+	function meaning(){
+		return $resource(helperService.baseUrl + 'api/name/:nameId/meaning', { nameId: '@nameId' }, {
+			save: { method: 'POST' }
+		});
+	}
+
 }
 
 })();

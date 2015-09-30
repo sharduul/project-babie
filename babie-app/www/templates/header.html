@@ -15,12 +15,11 @@
 <!-- this is the footer of the application
  for now it will be used for:
  - meaning input box on nameDetails screen -->
-<ion-footer-bar class="bar-balanced" ng-if="headerCtrl.stateIs === 'app.nameDetails'">
-    <div class="col-80">
-        <md-input-container>
-            <input ng-model="addNameCtrl.name.nameInfo">
-        </md-input-container>
-    </div>
+<!-- <ion-footer-bar class="bar-balanced" ng-if="headerCtrl.stateIs === 'app.nameDetails'"> -->
+<ion-footer-bar class="bar-balanced">
+
+	<input ng-model="addNameCtrl.name.nameInfo" class="meaning-input col-80" placeholder="Enter new meaning here...">
+	
     <div class="buttons col-offset-5" ng-click="nameDetailsCtrl.addMeaning()">
         <md-button type="submit" class="md-raised md-primary">Add</md-button>
     </div>
