@@ -1,4 +1,6 @@
 var Name = require('../models').nameModel;
+var Meaning = require('../models').meaningModel;
+
 
 module.exports = function(app, dbqueries){
 
@@ -68,6 +70,38 @@ module.exports = function(app, dbqueries){
         });
 
 	 });
+
+
+    // API to add a new name to the database
+    app.put('/api/name/:nameId/meaning', function(req, res){
+
+        dbqueries.getNextSequence(Meaning).exec().then(function(data) {
+
+            var meaning = {
+                "meaningId": data.seq,
+                "meaningInfo": req.body.meaningInfo
+            };
+
+
+            Name.findOne({ nameId: req.params.nameId }).exec().then(function(name){
+
+
+                name.meaning.push(meaning);
+
+                Name.update({ nameId: req.params.nameId }, { $set:{ meaning: name.meaning }}, { upsert: true }, function(result, error){
+
+                    console.log(result);
+                    console.log(error);
+
+                    res.send(result);
+
+                });
+
+            });
+
+        });
+
+    });
 
 
     // TODO: for reference.. will be needed in the future..
