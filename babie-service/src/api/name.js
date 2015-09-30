@@ -72,48 +72,37 @@ module.exports = function(app, dbqueries){
 	 });
 
 
-    // API to add a new name to the database
-    app.put('/api/name/:nameId/meaning', function(req, res){
+    // API to add a meaning to the name
+    app.post('/api/name/:nameId/meaning', function(req, res){
 
+        // TODO: check meaning id are unique PER NAME... not throughout collection
+        // get the next id for meaning
         dbqueries.getNextSequence(Meaning).exec().then(function(data) {
 
+            // construct the meaning object
             var meaning = {
                 "meaningId": data.seq,
                 "meaningInfo": req.body.meaningInfo
             };
 
 
+            // find the name with given name id
             Name.findOne({ nameId: req.params.nameId }).exec().then(function(name){
 
-
+                // add the new meaning to the old meaning for that name
                 name.meaning.push(meaning);
 
-                Name.update({ nameId: req.params.nameId }, { $set:{ meaning: name.meaning }}, { upsert: true }, function(result, error){
+                // now update the meaning with the new meaning array
+                Name.update({ nameId: req.params.nameId }, { $set:{ meaning: name.meaning }}, { upsert: true }, function(error, result){
 
-                    console.log(result);
-                    console.log(error);
-
+                    // TODO: if needed- send the new meaning object as the response.. will have to retrieve it first to send it
                     res.send(result);
 
                 });
-
             });
-
         });
-
     });
 
-
-    // TODO: for reference.. will be needed in the future..
-    //// UPDATE QUERY... use it to implement EDIT APIs
-    //tempName.meaning.push({
-    //    "meaningId": 9,
-    //    "meaningInfo": "Little; Small"
-    //});
-    //Name.update({nameId:tempName.nameId}, {$set:{meaning: tempName.meaning}}, {upsert:true}, function(error, result){
-    //    console.log(error);
-    //    console.log(result);
-    //});
 
 // ********************* private functions **********************************************
 

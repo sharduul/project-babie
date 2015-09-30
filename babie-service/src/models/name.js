@@ -7,7 +7,7 @@ var NameSchema = new Schema({
 	nameInfo: {type: String, unique: true, require: true},
 	meaning: [
         {
-		    meaningId: {type: Number, unique: true},
+		    meaningId: {type: Number},
 		    meaningInfo: {type: String}
 	    }
     ],
