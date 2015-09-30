@@ -10,9 +10,9 @@ angular
 
 
 Config.$inject = ['$stateProvider', '$urlRouterProvider'];
-Run.$inject = ['$ionicPlatform', '$rootScope'];
+Run.$inject = ['$ionicPlatform', '$rootScope', '$state'];
 
-function Run($ionicPlatform, $rootScope) {
+function Run($ionicPlatform, $rootScope, $state) {
   
   $ionicPlatform.ready(function() {
 
@@ -29,9 +29,15 @@ function Run($ionicPlatform, $rootScope) {
   // this event is fired whenever there is change of route state
   $rootScope.$on('$stateChangeSuccess',  function(e, stateData) {
 
+    // create custom state data to be passed to the event listeners
+    var customStateData = {
+      name: $state.current.name,
+      params: $state.params
+    }
+
     // tell the event listeners that the state is now changed
     // this is mainly used to hide/unhide the add meaning box... and to show/hide header menu items
-    $rootScope.$emit('stateChanged', stateData.name);
+    $rootScope.$emit('stateChanged', customStateData);
 
   });
 
