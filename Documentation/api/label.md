@@ -1,7 +1,7 @@
 ###Get all labels   
 
 **URL: api/label?filter=label startwith s**
-- this API filters labels by "starts with"
+- currently this API filters labels only by "starts with"
 
 **Request:**
 
