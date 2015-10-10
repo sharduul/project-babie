@@ -11,8 +11,9 @@ NameResource.$inject = ['$resource', 'helperService'];
 function NameResource($resource, helperService) {
 
 	return {
-		name: name
-	}
+        name: name,
+        meaning: meaning
+	};
 
 
 	function name(){

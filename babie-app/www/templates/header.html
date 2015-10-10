@@ -24,7 +24,7 @@
  - meaning input box on nameDetails screen -->
  <ion-footer-bar class="bar-balanced" ng-if="headerCtrl.stateIs === 'app.nameDetails'">
 <!--<ion-footer-bar class="bar-balanced">-->
-	<form name="contactForm" ng-submit="headerCtrl.addName()">
+	<form name="contactForm" ng-submit="headerCtrl.addMeaning()">
 		<input ng-model="headerCtrl.meaning.meaningInfo" class="meaning-input col-80" placeholder="Enter new meaning here..." required>
 		<md-button type="submit" class="md-raised md-primary col-offset-5">Add</md-button>
 	</form>
