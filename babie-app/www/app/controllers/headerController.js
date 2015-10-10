@@ -13,6 +13,7 @@
 		var nameId = $state.params.nameId;
 
 		vm.stateIs = 'app';
+        vm.goToAddName = goToAddName;
 
 		(function(){
 
@@ -28,6 +29,10 @@
 			
 			console.log(customStateData);
 		});
+
+        function goToAddName(){
+            $state.go('app.addName');
+        }
 
 	}
 

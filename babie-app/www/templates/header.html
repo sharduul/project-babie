@@ -1,9 +1,16 @@
 <div>
 <md-content class="header-bar md-default-theme">
     <md-toolbar class="md-default-theme">
-      <h2 class="md-toolbar-tools">
-        <span>Babie</span>
-      </h2>
+        <div layout="row" class="colorNested">
+            <div flex>
+                <h2 class="md-toolbar-tools">
+                    <span>Babie</span>
+                </h2>
+            </div>
+            <div flex>
+                <md-button type="submit" class="md-raised md-primary" ng-click="headerCtrl.goToAddName()">Add Name</md-button>
+            </div>
+        </div>
     </md-toolbar>
 </md-content>
 </div>
@@ -15,8 +22,8 @@
 <!-- this is the footer of the application
  for now it will be used for:
  - meaning input box on nameDetails screen -->
-<!-- <ion-footer-bar class="bar-balanced" ng-if="headerCtrl.stateIs === 'app.nameDetails'"> -->
-<ion-footer-bar class="bar-balanced">
+ <ion-footer-bar class="bar-balanced" ng-if="headerCtrl.stateIs === 'app.nameDetails'">
+<!--<ion-footer-bar class="bar-balanced">-->
 	<form name="contactForm" ng-submit="headerCtrl.addName()">
 		<input ng-model="headerCtrl.meaning.meaningInfo" class="meaning-input col-80" placeholder="Enter new meaning here..." required>
 		<md-button type="submit" class="md-raised md-primary col-offset-5">Add</md-button>
