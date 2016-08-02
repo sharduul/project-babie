@@ -1,23 +1,25 @@
-### Notes
+Ionic App Base
+=====================
 
-Calculate height of the device (screen)
+A starting project for Ionic that optionally supports using custom SCSS.
 
-    - height: calc(100%) 
+## Using this project
 
+We recommend using the [Ionic CLI](https://github.com/driftyco/ionic-cli) to create new Ionic projects that are based on this project but use a ready-made starter template.
 
-#### Create REAL sticky footer
-- which will always stay at the bottom of the page
-- irrespective of height of the main content... or no content!
-- layout the content as the code in header.html
-- then change the CSS as following.. it is for the div inside ion-view
+For example, to start a new Ionic project with the default tabs interface, make sure the `ionic` utility is installed:
 
+```bash
+$ npm install -g ionic
 ```
-// this is the div inside ion-view.. created by ionic
-// this style is needed so that name details view will have full height as well as be scrollable
-// and more importantly... you can have a sticky footer!!!.. always stuck to the bottom of the screen
-.pane{
-  height: -moz-calc(100%) !important;
-  height: -webkit-calc(100%) !important;
-  height: calc(100%) !important;
-}
+
+Then run: 
+
+```bash
+$ ionic start myProject tabs
 ```
+
+More info on this can be found on the Ionic [Getting Started](http://ionicframework.com/getting-started) page and the [Ionic CLI](https://github.com/driftyco/ionic-cli) repo.
+
+## Issues
+Issues have been disabled on this repo, if you do find an issue or have a question consider posting it on the [Ionic Forum](http://forum.ionicframework.com/).  Or else if there is truly an error, follow our guidelines for [submitting an issue](http://ionicframework.com/submit-issue/) to the main Ionic repository.

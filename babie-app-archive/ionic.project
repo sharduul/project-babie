@@ -1,0 +1,8 @@
+{
+  "name": "babie-app",
+  "app_id": "",
+  "gulpStartupTasks": [
+	"watch"
+  ]
+  
+}

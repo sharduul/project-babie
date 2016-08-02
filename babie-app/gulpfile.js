@@ -2,28 +2,21 @@ var gulp = require('gulp');
 var gutil = require('gulp-util');
 var bower = require('bower');
 var concat = require('gulp-concat');
+var sass = require('gulp-sass');
 var minifyCss = require('gulp-minify-css');
 var rename = require('gulp-rename');
 var sh = require('shelljs');
-var less = require('gulp-less');
-
 
 var paths = {
-  sass: ['./scss/**/*.scss'],
-  less: ['./less/**/*.less']
+  sass: ['./scss/**/*.scss']
 };
 
-gulp.task('default', ['less']);
-
-gulp.task('less', function(){
-  gulp.src('./less/main.less')
-    .pipe(less())
-    .pipe(gulp.dest('./www/css'));
-});
+gulp.task('default', ['sass']);
 
 gulp.task('sass', function(done) {
   gulp.src('./scss/ionic.app.scss')
     .pipe(sass())
+    .on('error', sass.logError)
     .pipe(gulp.dest('./www/css/'))
     .pipe(minifyCss({
       keepSpecialComments: 0
@@ -34,7 +27,7 @@ gulp.task('sass', function(done) {
 });
 
 gulp.task('watch', function() {
-  gulp.watch([paths.sass, paths.less], ['less']);
+  gulp.watch(paths.sass, ['sass']);
 });
 
 gulp.task('install', ['git-check'], function() {

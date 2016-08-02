@@ -1,8 +1,4 @@
 {
-  "name": "babie-app",
-  "app_id": "",
-  "gulpStartupTasks": [
-	"watch"
-  ]
-  
+  "name": "ionic-app-base-master",
+  "app_id": ""
 }
