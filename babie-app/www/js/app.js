@@ -1,18 +1,24 @@
-// Ionic Starter App
+(function(){
 
-// angular.module is a global place for creating, registering and retrieving Angular modules
-// 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
-// the 2nd parameter is an array of 'requires'
-angular.module('starter', ['ionic'])
+'use strict';
 
-.run(function($ionicPlatform) {
+
+angular
+  .module('babie', ['ionic', 
+                    'ngMaterial', 
+                    'ngResource',
+                    'babie.components.home'])
+  .run(Run)
+  .config(Config)
+
+
+Config.$inject = ['$stateProvider', '$urlRouterProvider'];
+Run.$inject = ['$ionicPlatform', '$rootScope', '$state'];
+
+function Run($ionicPlatform, $rootScope, $state) {
+  
   $ionicPlatform.ready(function() {
-    // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
-    // for form inputs).
-    // The reason we default this to hidden is that native apps don't usually show an accessory bar, at
-    // least on iOS. It's a dead giveaway that an app is using a Web View. However, it's sometimes
-    // useful especially with forms, though we would prefer giving the user a little more room
-    // to interact with the app.
+
     if (window.cordova && window.cordova.plugins.Keyboard) {
       cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
       cordova.plugins.Keyboard.disableScroll(true);
@@ -22,5 +28,42 @@ angular.module('starter', ['ionic'])
       // remove the status bar on iOS or change it to use white instead of dark colors.
       StatusBar.styleDefault();
     }
+
   });
-});
+
+  // this event is fired whenever there is change of route state
+  $rootScope.$on('$stateChangeSuccess',  function(e, stateData) {
+
+  });
+
+}
+
+function Config($stateProvider, $urlRouterProvider){
+
+   $stateProvider
+
+    // TODO: splash screen
+    // .state('splash', {
+    //   url: "/",
+    //   templateUrl: "templates/splash.html"
+    // })
+
+    .state('app', {
+      url: "/app",
+      abstract: true
+    })
+    .state('app.home', {
+      url: "/home",
+      templateUrl: "components/home/home.html",
+      controller: 'homeController as home'
+    });
+
+
+    // if none of the above states are matched, use this as the fallback
+    $urlRouterProvider.otherwise('/app/home');
+
+}
+
+})();
+
+
