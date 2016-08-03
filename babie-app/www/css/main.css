@@ -1,0 +1,276 @@
+.carousel {
+  display: inline-block;
+  white-space: normal;
+  max-width: 80%;
+}
+.wide-as-needed {
+  white-space: nowrap;
+}
+.ellipsis {
+  overflow: hidden;
+  height: 48px;
+  line-height: 25px;
+  margin: 20px;
+}
+.ellipsis:before {
+  content: "";
+  float: left;
+  width: 5px;
+  height: 48px;
+}
+.ellipsis > *:first-child {
+  float: right;
+  width: 100%;
+  margin-left: -5px;
+}
+.ellipsis:after {
+  content: "\02026";
+  box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  float: right;
+  position: relative;
+  top: -25px;
+  left: 100%;
+  width: 3em;
+  margin-left: -3em;
+  padding-right: 5px;
+  text-align: right;
+  background: -webkit-gradient(linear, left top, right top, from(rgba(255, 255, 255, 0)), to(white), color-stop(50%, white));
+  background: -moz-linear-gradient(to right, rgba(255, 255, 255, 0), white 50%, white);
+  background: -o-linear-gradient(to right, rgba(255, 255, 255, 0), white 50%, white);
+  background: -ms-linear-gradient(to right, rgba(255, 255, 255, 0), white 50%, white);
+  background: linear-gradient(to right, rgba(255, 255, 255, 0), white 50%, white);
+}
+.float-right {
+  float: right;
+}
+.float-left {
+  float: left;
+}
+.bold {
+  font-weight: bold;
+}
+a {
+  color: #047293;
+  text-decoration: none;
+}
+.pane {
+  height: -moz-calc(100%) !important;
+  height: -webkit-calc(100%) !important;
+  height: calc(100%) !important;
+}
+.has-footer {
+  padding-bottom: 110px !important;
+}
+.labels {
+  font-size: 0.55em;
+  padding: 3px;
+  line-height: 0.55em;
+  margin-left: 3px;
+}
+.labels.md-button.md-default-theme {
+  border-radius: 0;
+}
+.labels.md-button.md-raised:not([disabled]) {
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.26);
+}
+.container {
+  padding: 10px 0;
+}
+.pad-sides-sm {
+  padding: 0 5px;
+}
+.pad-bottom-sm {
+  padding-bottom: 5px;
+}
+.pad-top-sm {
+  padding-top: 5px;
+}
+.pad-left-sm {
+  padding-left: 5px;
+}
+.pad-left-md {
+  padding-left: 10px;
+}
+.position-relative {
+  position: relative;
+}
+.col-offset-5 {
+  margin-left: 5%;
+}
+.label-tag {
+  position: absolute;
+  bottom: 0;
+}
+.meaning-container {
+  padding: 5px;
+  background-color: lightgray;
+}
+.meaning-container ul {
+  background-color: white;
+}
+.meaning-container ul:not(:first-child) {
+  margin-top: 5px;
+}
+.meaning-input {
+  border-width: 0 0 1px;
+  background: 0 0;
+  border-color: rgba(0, 0, 0, 0.12);
+  width: 100%;
+}
+.meaning-input::-webkit-input-placeholder {
+  /* WebKit, Blink, Edge */
+  color: white;
+}
+.meaning-input:-moz-placeholder {
+  /* Mozilla Firefox 4 to 18 */
+  color: white;
+  opacity: 1;
+}
+.meaning-input::-moz-placeholder {
+  /* Mozilla Firefox 19+ */
+  color: white;
+  opacity: 1;
+}
+.meaning-input:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: white;
+}
+html,
+body,
+div,
+span,
+object,
+iframe,
+h1,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+abbr,
+address,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+samp,
+small,
+strong,
+sub,
+sup,
+var,
+b,
+i,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+ul {
+  list-style: none;
+}
+a {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+input,
+select {
+  vertical-align: middle;
+}
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  font-size: 12px;
+  font-family: 'roboto';
+  font-weight: normal;
+}
+.labels,
+h2 {
+  text-transform: capitalize;
+}
+md-card {
+  width: 272px;
+}
+section {
+  padding-bottom: 5px;
+}
+md-content.header-bar {
+  display: block;
+  z-index: 9;
+}
+.pane {
+  position: relative;
+  overflow: inherit;
+  height: auto;
+}
+[nav-view="stage"] {
+  opacity: inherit;
+}
+form {
+  width: 100%;
+}
