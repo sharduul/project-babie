@@ -7,7 +7,8 @@ angular
   .module('babie', ['ionic', 
                     'ngMaterial', 
                     'ngResource',
-                    'babie.components.home'])
+                    'babie.components.home',
+                    'babie.components.header'])
   .run(Run)
   .config(Config)
 
@@ -50,7 +51,9 @@ function Config($stateProvider, $urlRouterProvider){
 
     .state('app', {
       url: "/app",
-      abstract: true
+      abstract: true,
+      templateUrl: "components/header/header.html",
+      controller: 'headerController as header'
     })
     .state('app.home', {
       url: "/home",
