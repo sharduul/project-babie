@@ -7,6 +7,7 @@ angular
   .module('babie', ['ionic', 
                     'ngMaterial', 
                     'ngResource',
+                    'babie.services',
                     'babie.components.home',
                     'babie.components.header'])
   .run(Run)
