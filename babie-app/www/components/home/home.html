@@ -1,4 +1,15 @@
 <div>
 	test
+	<md-grid-list
+        md-cols="1" md-row-height="1:1" >
+    <md-grid-tile ng-repeat="name in home.alphabeticNames[0]"
+                  md-rowspan="1"
+                  md-colspan="1"
+                  md-colspan-sm="1"
+                  md-colspan-xs="1" >
+          <label>{{ name.nameInfo }}:</label>
+          <label>{{ name.meaning[0].meaningInfo }}</label>
+    </md-grid-tile>
+  </md-grid-list>
 </div>
 
