@@ -1,0 +1,102 @@
+.float-right{
+	float: right;
+}
+
+.float-left{
+	float: left;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+a {
+    color: @linkColor;
+    text-decoration: none;
+}
+
+// this is the div inside ion-view.. created by ionic
+// this style is needed so that name details view will have full height as well as be scrollable
+// and more importantly... you can have a sticky footer!!!.. always stuck to the bottom of the screen
+.pane{
+  height: -moz-calc(100%) !important;
+  height: -webkit-calc(100%) !important;
+  height: calc(100%) !important;
+}
+
+.has-footer{
+  padding-bottom: 110px !important; // it is approx equal to header height + footer height
+}
+
+.labels {
+	font-size: @xxSmallFontSize;
+	padding: 3px;
+	line-height: @xxSmallFontSize;
+	margin-left: 3px;
+}
+
+.labels.md-button.md-default-theme {
+  	border-radius: 0;
+}
+
+.labels.md-button.md-raised:not([disabled]) {
+  	box-shadow: 0 1px 4px 0 rgba(0,0,0,.26);
+}
+
+.container{
+	padding: 10px 0;
+}
+
+
+.pad-sides-sm{
+	padding: 0 5px;
+}
+
+.pad-bottom-sm{
+	padding-bottom: 5px;
+}
+
+.pad-top-sm{
+	padding-top: 5px;
+}
+
+.pad-left-sm{
+	padding-left: 5px;
+}
+
+.pad-left-md{
+	padding-left: 10px;
+}
+
+.position-relative{
+	position: relative;
+}
+
+.col-offset-5{
+	margin-left: 5%;
+}
+
+.label-tag{
+	position: absolute;
+    bottom: 0;
+}
+
+.meaning-container{
+	padding: 5px;
+	background-color: lightgray;
+
+	ul {
+	    background-color: white;
+	}
+
+	ul:not(:first-child) {
+		margin-top: 5px;
+	}
+}
+
+
+.md-button.md-fab.bb-action-mini{
+  width: 24px;
+  height: 24px;
+  min-height: 24px;
+}

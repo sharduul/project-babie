@@ -1,0 +1,75 @@
+html, body, div, span, object, iframe, h1, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    margin: 0;
+    padding: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+}
+
+input, select {
+    vertical-align: middle;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-size: @baseFontSize;
+    font-family: 'roboto';
+    font-weight: normal;
+}
+
+.labels, h2 {
+    text-transform: capitalize;
+}
+
+md-card{
+    width: 272px;
+}
+
+section {
+    padding-bottom: 5px;
+}
+
+// reset inline-block of style: [class^=md-]
+md-content.header-bar {
+    display: block;
+    z-index: 9; // same as footer in the header.html
+}
+
+// reset ionic class for displaying 
+// alphabetic name scrolls one below the other
+.pane{
+   position: relative;
+   overflow: inherit; 
+   height: auto;
+}
+
+// reset ionic style which was hiding display 
+// when viewing at device resolution on chrome 
+[nav-view="stage"] {
+    opacity: inherit;
+}
+
+form{
+    width: 100%;
+}
