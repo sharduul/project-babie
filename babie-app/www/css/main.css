@@ -59,20 +59,20 @@ a {
   position: absolute;
   bottom: 0;
 }
-.meaning-container {
-  padding: 5px;
-  background-color: lightgray;
-}
-.meaning-container ul {
-  background-color: white;
-}
-.meaning-container ul:not(:first-child) {
-  margin-top: 5px;
-}
 .md-button.md-fab.bb-action-mini {
   width: 24px;
   height: 24px;
   min-height: 24px;
+}
+.bb-home-toolbar {
+  display: block;
+  background-color: inherit !important;
+  border-bottom: solid 0.01em black;
+}
+.bb-home-toolbar .md-button.md-fab {
+  line-height: 20px;
+  margin: 1px 1px;
+  background-color: gray;
 }
 html,
 body,

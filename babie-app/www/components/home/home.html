@@ -1,8 +1,8 @@
 <div>
   <md-card flex>
-    <md-toolbar class="md-hue-2">
-      <md-button class="md-fab bb-action-mini" aria-label="Eat cake">
-        <md-icon md-svg-src="img/icons/cake.svg"></md-icon>
+    <md-toolbar class="bb-home-toolbar">
+      <md-button class="md-fab bb-action-mini " aria-label="alphabets" ng-repeat="alphabet in home.alphabetArray">
+        {{ alphabet }}
       </md-button>
     </md-toolbar>
     <md-card-content layout="column" class="virtualRepeatdemoVerticalUsage">
