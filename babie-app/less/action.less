@@ -13,7 +13,19 @@
   .md-button.md-fab{
     line-height: 20px;
     margin: 1px 1px;
+    background-color: inherit;
+    color: @primaryColor;
+    box-shadow: 0px 0px 0px 0.01em rgba(0,0,0,1);
+  }
+
+
+  // reset the activeness, focus and hover on search button clicks
+  .md-button:not([disabled]).md-fab:active, .md-button:not([disabled]).md-raised:active,
+  .md-button.md-default-theme.md-fab:not([disabled]):hover, .md-button.md-fab:not([disabled]):hover,
+  .md-button.md-default-theme.md-fab:not([disabled]):focus, .md-button.md-fab:not([disabled]):focus{
     background-color: @primaryColor;
+    color: white;
+    box-shadow: 0px 0px 0px 0.01em rgba(0,0,0,1);
   }
 
 }

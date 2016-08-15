@@ -73,7 +73,19 @@ a {
 .bb-home-toolbar .md-button.md-fab {
   line-height: 20px;
   margin: 1px 1px;
+  background-color: inherit;
+  color: gray;
+  box-shadow: 0px 0px 0px 0.01em #000000;
+}
+.bb-home-toolbar .md-button:not([disabled]).md-fab:active,
+.bb-home-toolbar .md-button:not([disabled]).md-raised:active,
+.bb-home-toolbar .md-button.md-default-theme.md-fab:not([disabled]):hover,
+.bb-home-toolbar .md-button.md-fab:not([disabled]):hover,
+.bb-home-toolbar .md-button.md-default-theme.md-fab:not([disabled]):focus,
+.bb-home-toolbar .md-button.md-fab:not([disabled]):focus {
   background-color: gray;
+  color: white;
+  box-shadow: 0px 0px 0px 0.01em #000000;
 }
 html,
 body,
