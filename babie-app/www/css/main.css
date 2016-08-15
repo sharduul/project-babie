@@ -68,6 +68,7 @@ a {
   display: block;
   background-color: inherit !important;
   border-bottom: solid 0.01em black;
+  padding: 2px;
 }
 .bb-home-toolbar .md-button.md-fab {
   line-height: 20px;
@@ -190,8 +191,9 @@ body {
 h2 {
   text-transform: capitalize;
 }
-md-card {
-  width: 272px;
+md-card.component-wrapper {
+  margin: 0;
+  box-shadow: none;
 }
 section {
   padding-bottom: 5px;

@@ -1,20 +1,17 @@
-<div>
-  <md-card flex>
-    <md-toolbar class="bb-home-toolbar">
-      <md-button class="md-fab bb-action-mini " aria-label="alphabets" ng-repeat="alphabet in home.alphabetArray">
-        {{ alphabet }}
-      </md-button>
-    </md-toolbar>
-    <md-card-content layout="column" class="virtualRepeatdemoVerticalUsage">
-      <md-list>
-        <md-list-item class="md-3-line" ng-repeat="name in home.alphabeticNames[0]" ng-click="null">
-          <div class="md-list-item-text" layout="column">
-            <h3>{{ name.nameInfo }}</h3>
-            <p>{{ name.meaning[0].meaningInfo }}</p>
-          </div>
-        </md-list-item>
-      </md-list>
-    </md-card-content>
-  </md-card>
-</div>
-
+<md-card flex class="component-wrapper">
+  <md-toolbar class="bb-home-toolbar">
+    <md-button class="md-fab bb-action-mini " aria-label="alphabets" ng-repeat="alphabet in home.alphabetArray">
+      {{ alphabet }}
+    </md-button>
+  </md-toolbar>
+  <md-card-content layout="column" class="virtualRepeatdemoVerticalUsage">
+    <md-list>
+      <md-list-item class="md-3-line" ng-repeat="name in home.alphabeticNames[0]" ng-click="null">
+        <div class="md-list-item-text" layout="column">
+          <h3>{{ name.nameInfo }}</h3>
+          <p>{{ name.meaning[0].meaningInfo }}</p>
+        </div>
+      </md-list-item>
+    </md-list>
+  </md-card-content>
+</md-card>

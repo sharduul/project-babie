@@ -42,8 +42,9 @@ body {
     text-transform: capitalize;
 }
 
-md-card{
-    width: 272px;
+md-card.component-wrapper{
+  margin: 0;
+  box-shadow: none;
 }
 
 section {
@@ -56,16 +57,16 @@ md-content.header-bar {
     z-index: 9; // same as footer in the header.html
 }
 
-// reset ionic class for displaying 
+// reset ionic class for displaying
 // alphabetic name scrolls one below the other
 .pane{
    position: relative;
-   overflow: inherit; 
+   overflow: inherit;
    height: auto;
 }
 
-// reset ionic style which was hiding display 
-// when viewing at device resolution on chrome 
+// reset ionic style which was hiding display
+// when viewing at device resolution on chrome
 [nav-view="stage"] {
     opacity: inherit;
 }
