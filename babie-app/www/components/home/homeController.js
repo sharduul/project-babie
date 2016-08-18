@@ -14,6 +14,8 @@
 		vm.alphabeticNames = [];
 		vm.alphabetArray = helperService.alphabetString().split('');
 
+    vm.getNamesByAlphabet = getNamesByAlphabet;
+
 		(function(){
 
       console.log(vm.alphabetArray);
@@ -33,6 +35,14 @@
         });
 
 		})();
+
+
+    function getNamesByAlphabet(alphabet){
+      vm.selectedAlphabet = alphabet;
+      apiResource.name.name().get({filter: "search equals " + alphabet, page: 1, size: 10}, function(result){
+        vm.alphabeticNames[0] = result;
+      });
+    }
 
 	}
 

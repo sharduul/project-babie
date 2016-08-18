@@ -1,6 +1,9 @@
 <md-card flex class="component-wrapper">
   <md-toolbar class="bb-home-toolbar">
-    <md-button class="md-fab bb-action-mini " aria-label="alphabets" ng-repeat="alphabet in home.alphabetArray">
+    <md-button class="md-fab bb-action-mini " aria-label="alphabets"
+               ng-click="home.getNamesByAlphabet(alphabet)"
+               ng-class="{ selected: home.selectedAlphabet == alphabet }"
+               ng-repeat="alphabet in home.alphabetArray">
       {{ alphabet }}
     </md-button>
   </md-toolbar>

@@ -57,6 +57,21 @@ md-content.header-bar {
     z-index: 9; // same as footer in the header.html
 }
 
+md-card md-card-content{
+  padding: 0 !important;
+}
+
+md-list-item.md-3-line div.md-button:first-child::before, md-list-item.md-3-line>._md-no-style div.md-button:first-child::before{
+  min-height: inherit !important;
+}
+
+
+md-list-item.md-3-line, md-list-item.md-3-line>._md-no-style{
+  min-height: 60px !important;
+}
+
+
+
 // reset ionic class for displaying
 // alphabetic name scrolls one below the other
 .pane{
