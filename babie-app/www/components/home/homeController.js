@@ -29,8 +29,6 @@
                 // TODO: for sorting the map alphabetically use map['a'], map['b'], etc..
                 vm.alphabeticNames[index] = result;
 
-                console.log(vm.alphabeticNames[0]);
-
             });
         });
 

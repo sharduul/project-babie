@@ -82,6 +82,15 @@ a {
   color: white;
   box-shadow: 0px 0px 0px 0.01em #000000;
 }
+.list-item-actions {
+  margin-top: 5px;
+}
+.list-item-actions div {
+  margin-right: 10px;
+}
+.list-item-actions .material-icons {
+  font-size: 18px;
+}
 html,
 body,
 div,
@@ -218,7 +227,7 @@ md-list-item.md-3-line > ._md-no-style div.md-button:first-child::before {
 }
 md-list-item.md-3-line,
 md-list-item.md-3-line > ._md-no-style {
-  min-height: 60px !important;
+  min-height: 85px !important;
 }
 .pane {
   position: relative;
@@ -230,4 +239,7 @@ md-list-item.md-3-line > ._md-no-style {
 }
 form {
   width: 100%;
+}
+md-list-item {
+  box-shadow: -2px 8px 26px -26px #000000;
 }

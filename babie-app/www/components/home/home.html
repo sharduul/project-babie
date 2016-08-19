@@ -11,9 +11,18 @@
   <md-card-content layout="column" class="virtualRepeatdemoVerticalUsage">
     <md-list>
       <md-list-item class="md-3-line" ng-repeat="name in home.alphabeticNames[0]" ng-click="null">
-        <div class="md-list-item-text" layout="column">
+        <div class="md-list-item-text" layout="column" layout-align="center start">
           <h3>{{ name.nameInfo }}</h3>
           <p>{{ name.meaning[0].meaningInfo }}</p>
+          <div class="list-item-actions" layout="row" layout-align="start center">
+            <div layout="row" layout-align="start center">
+              <i class="material-icons">favorite</i>
+              <label>123</label>
+            </div>
+            <div layout="row" layout-align="start center">
+              <i class="material-icons">add</i>
+            </div>
+          </div>
         </div>
       </md-list-item>
 
