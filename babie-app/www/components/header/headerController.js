@@ -11,12 +11,18 @@
 	function headerController() {
 		var vm = this;
 
+		vm.searchActivated = false;
+		vm.toggleSearch = toggleSearch;
+
         (function(){
 
 			console.log("header");
 
 		})();
 
+		function toggleSearch(){
+			vm.searchActivated = !vm.searchActivated;
+		}
 	}
 
 })();

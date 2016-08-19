@@ -170,6 +170,7 @@ video {
   font-size: 100%;
   vertical-align: baseline;
   background: transparent;
+  font-family: 'Source Sans Pro', sans-serif;
 }
 article,
 aside,
@@ -221,6 +222,15 @@ section {
 md-content.header-bar {
   display: block;
   z-index: 9;
+  overflow: hidden;
+}
+md-content.header-bar md-input-container {
+  margin: 0;
+  height: 40px;
+}
+md-content.header-bar .layout-row {
+  width: 100%;
+  height: 56px;
 }
 md-card md-card-content {
   padding: 0 !important;

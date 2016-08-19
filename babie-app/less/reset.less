@@ -6,6 +6,7 @@ html, body, div, span, object, iframe, h1, h3, h4, h5, h6, p, blockquote, pre, a
     font-size: 100%;
     vertical-align: baseline;
     background: transparent;
+    font-family: 'Source Sans Pro', sans-serif;
 }
 
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
@@ -55,6 +56,18 @@ section {
 md-content.header-bar {
     display: block;
     z-index: 9; // same as footer in the header.html
+    overflow: hidden;
+
+    // search box
+    md-input-container{
+      margin: 0;
+      height: 40px; // should match icon button (close button)
+    }
+
+    .layout-row{
+      width: 100%;
+      height: 56px;
+    }
 }
 
 md-card md-card-content{
