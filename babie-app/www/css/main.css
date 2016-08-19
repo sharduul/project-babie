@@ -65,7 +65,10 @@ a {
   min-height: 24px;
 }
 .bb-home-toolbar {
-  display: block;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
   background-color: inherit !important;
   border-bottom: solid 0.01em black;
   padding: 2px;
@@ -76,6 +79,7 @@ a {
   background-color: inherit;
   color: gray;
   box-shadow: 0px 0px 0px 0.01em #000000;
+  margin: 0 2px;
 }
 .bb-home-toolbar .md-button.md-fab.bb-action-mini.selected {
   background-color: gray;
