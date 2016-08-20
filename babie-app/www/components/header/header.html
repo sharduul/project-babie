@@ -43,13 +43,15 @@
 <ion-nav-view class=""></ion-nav-view>
 
 <ion-footer-bar align-title="left" layout="row" class="bar bar-footer home-footer">
-  <md-button flex class="md-icon-button" aria-label="search"  ng-click="header.toggleSearch()">
+  <md-button flex class="md-icon-button" aria-label="search">
     <i class="material-icons">group</i>
   </md-button>
-  <md-button flex class="md-icon-button create-family" aria-label="search"  ng-click="header.toggleSearch()">
+  <md-button flex class="md-icon-button create-family" aria-label="search"
+             ui-sref="familyAdd"
+             ui-sref-opts="{reload: true}">
     <i class="material-icons">add_box</i>
   </md-button>
-  <md-button flex class="md-icon-button" aria-label="search"  ng-click="header.toggleSearch()">
+  <md-button flex class="md-icon-button" aria-label="search">
     <i class="material-icons">account_box</i>
   </md-button>
 </ion-footer-bar>

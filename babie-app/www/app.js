@@ -4,12 +4,13 @@
 
 
 angular
-  .module('babie', ['ionic', 
-                    'ngMaterial', 
+  .module('babie', ['ionic',
+                    'ngMaterial',
                     'ngResource',
                     'babie.services',
                     'babie.components.home',
-                    'babie.components.header'])
+                    'babie.components.header',
+                    'babie.components.family'])
   .run(Run)
   .config(Config)
 
@@ -18,7 +19,7 @@ Config.$inject = ['$stateProvider', '$urlRouterProvider'];
 Run.$inject = ['$ionicPlatform', '$rootScope', '$state'];
 
 function Run($ionicPlatform, $rootScope, $state) {
-  
+
   $ionicPlatform.ready(function() {
 
     if (window.cordova && window.cordova.plugins.Keyboard) {
@@ -60,6 +61,11 @@ function Config($stateProvider, $urlRouterProvider){
       url: "/home",
       templateUrl: "components/home/home.html",
       controller: 'homeController as home'
+    })
+    .state('familyAdd', {
+       url: "/familyAdd",
+       templateUrl: "components/family/familyAdd.html",
+       controller: 'familyAddController as familyAdd'
     });
 
 
