@@ -11,29 +11,29 @@
     	</div>
     	<div layout="row" layout-align="end center" flex ng-if="header.searchActivated" class="search-wrapper">
 	        <form ng-submit="$event.preventDefault()" name="searchForm">
-		      <div layout-gt-sm="row">
-		        <md-autocomplete flex required
-                md-items="item in header.querySearch(header.searchText)"
-		            md-input-name="searchInput"
-		            md-input-minlength="2"
-		            md-selected-item="header.selectedItem"
-		            md-search-text="header.searchText"
-		            md-item-text="item.nameInfo"
-		            md-floating-label="Search here..">
-		          <md-item-template>
-                <md-list-item class="md-3-line">
-                  <div class="md-list-item-text" layout="column" layout-align="center start">
-                    <h3>{{ item.nameInfo }}</h3>
-                    <p>{{ item.meaning[0].meaningInfo }}</p>
-                  </div>
-                </md-list-item>
-		          </md-item-template>
-		        </md-autocomplete>
-		      </div>
-		    </form>
-          	<md-button class="md-icon-button" aria-label="search" ng-click="header.toggleSearch()">
+            <div layout-gt-sm="row">
+              <md-autocomplete flex required
+                  md-items="item in header.querySearch(header.searchText)"
+                  md-input-name="searchInput"
+                  md-input-minlength="2"
+                  md-selected-item="header.selectedItem"
+                  md-search-text="header.searchText"
+                  md-item-text="item.nameInfo"
+                  md-floating-label="Search here..">
+                <md-item-template>
+                  <md-list-item class="md-3-line">
+                    <div class="md-list-item-text" layout="column" layout-align="center start">
+                      <h3>{{ item.nameInfo }}</h3>
+                      <p>{{ item.meaning[0].meaningInfo }}</p>
+                    </div>
+                  </md-list-item>
+                </md-item-template>
+              </md-autocomplete>
+		        </div>
+		      </form>
+          <md-button class="md-icon-button" aria-label="search" ng-click="header.toggleSearch()">
 	            <i class="material-icons">close</i>
-	          </md-button>
+          </md-button>
       	</div>
     </div>
 </md-content>
@@ -41,4 +41,16 @@
 
 <!-- all the views will be loaded here -->
 <ion-nav-view class=""></ion-nav-view>
+
+<ion-footer-bar align-title="left" layout="row" class="bar bar-footer home-footer">
+  <md-button flex class="md-icon-button" aria-label="search"  ng-click="header.toggleSearch()">
+    <i class="material-icons">group</i>
+  </md-button>
+  <md-button flex class="md-icon-button create-family" aria-label="search"  ng-click="header.toggleSearch()">
+    <i class="material-icons">add_box</i>
+  </md-button>
+  <md-button flex class="md-icon-button" aria-label="search"  ng-click="header.toggleSearch()">
+    <i class="material-icons">account_box</i>
+  </md-button>
+</ion-footer-bar>
 

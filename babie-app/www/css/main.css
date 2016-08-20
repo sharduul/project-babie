@@ -95,6 +95,13 @@ a {
 .list-item-actions .material-icons {
   font-size: 18px;
 }
+.home-footer .md-icon-button.create-family {
+  padding: 0;
+  margin-top: -4px;
+}
+.home-footer .md-icon-button.create-family i {
+  font-size: 40px;
+}
 html,
 body,
 div,
@@ -256,7 +263,7 @@ md-list-item.md-3-line > ._md-no-style div.md-button:first-child::before {
 }
 .home-content-wrapper md-list {
   overflow: auto;
-  height: 560px;
+  margin-bottom: 84px;
 }
 .md-autocomplete-suggestions md-list-item.md-3-line {
   min-height: 60px !important;
