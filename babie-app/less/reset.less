@@ -98,12 +98,11 @@ md-list-item.md-3-line div.md-button:first-child::before, md-list-item.md-3-line
 }
 
 
-home-content-wrapper {
-
-  md-list-item.md-3-line, md-list-item.md-3-line > ._md-no-style {
-    min-height: 85px !important;
+.home-content-wrapper {
+  md-list{
+    overflow: auto;
+    height: 560px; // so that the last item is not hidden
   }
-
 }
 
 .md-autocomplete-suggestions{
