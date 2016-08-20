@@ -227,6 +227,19 @@ md-content.header-bar {
 md-content.header-bar md-input-container {
   margin: 0;
   height: 40px;
+  font-size: 18px;
+  padding-left: 5px;
+}
+md-content.header-bar md-input-container input {
+  height: inherit;
+  font-size: inherit;
+}
+md-content.header-bar md-input-container label {
+  padding-left: inherit !important;
+  bottom: 75%;
+}
+md-content.header-bar md-input-container.md-input-focused label:not(.md-no-float) {
+  display: none !important;
 }
 md-content.header-bar .layout-row {
   width: 100%;
