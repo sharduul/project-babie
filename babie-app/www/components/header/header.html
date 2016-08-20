@@ -9,32 +9,36 @@
 	          <i class="material-icons">search</i>
 	        </md-button>
     	</div>
-    	<div layout="row" layout-align="end center" flex ng-if="header.searchActivated">
+    	<div layout="row" layout-align="end center" flex ng-if="header.searchActivated" class="search-wrapper">
 	        <form ng-submit="$event.preventDefault()" name="searchForm">
 		      <div layout-gt-sm="row">
 		        <md-autocomplete flex required
+                md-items="item in header.querySearch(header.searchText)"
 		            md-input-name="searchInput"
 		            md-input-minlength="2"
-		            md-selected-item="ctrl.selectedItem"
-		            md-search-text="ctrl.searchText"
-		            md-items="item in ctrl.querySearch(ctrl.searchText)"
-		            md-item-text="item.display"
-		            md-require-match
+		            md-selected-item="header.selectedItem"
+		            md-search-text="header.searchText"
+		            md-item-text="item.nameInfo"
 		            md-floating-label="Search here..">
 		          <md-item-template>
-		            <span md-highlight-text="ctrl.searchText">{{item.display}}</span>
+                <md-list-item class="md-3-line">
+                  <div class="md-list-item-text" layout="column" layout-align="center start">
+                    <h3>{{ item.nameInfo }}</h3>
+                    <p>{{ item.meaning[0].meaningInfo }}</p>
+                  </div>
+                </md-list-item>
 		          </md-item-template>
 		        </md-autocomplete>
 		      </div>
 		    </form>
           	<md-button class="md-icon-button" aria-label="search" ng-click="header.toggleSearch()">
-	          <i class="material-icons">close</i>
-	        </md-button>
+	            <i class="material-icons">close</i>
+	          </md-button>
       	</div>
     </div>
 </md-content>
 </div>
 
 <!-- all the views will be loaded here -->
-<ion-nav-view class="testClass"></ion-nav-view>
+<ion-nav-view class=""></ion-nav-view>
 

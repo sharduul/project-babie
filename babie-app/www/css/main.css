@@ -238,7 +238,9 @@ md-content.header-bar md-input-container label {
   padding-left: inherit !important;
   bottom: 75%;
 }
-md-content.header-bar md-input-container.md-input-focused label:not(.md-no-float) {
+md-content.header-bar md-input-container.md-input-focused label:not(.md-no-float),
+md-content.header-bar md-input-container.md-input-has-placeholder label:not(.md-no-float),
+md-content.header-bar md-input-container.md-input-has-value label:not(.md-no-float) {
   display: none !important;
 }
 md-content.header-bar .layout-row {
@@ -252,9 +254,15 @@ md-list-item.md-3-line div.md-button:first-child::before,
 md-list-item.md-3-line > ._md-no-style div.md-button:first-child::before {
   min-height: inherit !important;
 }
-md-list-item.md-3-line,
-md-list-item.md-3-line > ._md-no-style {
+home-content-wrapper md-list-item.md-3-line,
+home-content-wrapper md-list-item.md-3-line > ._md-no-style {
   min-height: 85px !important;
+}
+.md-autocomplete-suggestions md-list-item.md-3-line {
+  min-height: 60px !important;
+}
+.md-autocomplete-suggestions li {
+  height: 100% !important;
 }
 .pane {
   position: relative;
@@ -269,4 +277,11 @@ form {
 }
 md-list-item {
   box-shadow: -2px 8px 26px -26px #000000;
+}
+.search-wrapper md-list-item {
+  min-height: 60px;
+}
+.md-virtual-repeat-container.md-autocomplete-suggestions-container {
+  width: 100%;
+  left: 4px !important;
 }

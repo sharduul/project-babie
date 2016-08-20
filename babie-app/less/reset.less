@@ -77,7 +77,9 @@ md-content.header-bar {
 
     }
 
-    md-input-container.md-input-focused label:not(.md-no-float){
+    md-input-container.md-input-focused label:not(.md-no-float),
+    md-input-container.md-input-has-placeholder label:not(.md-no-float),
+    md-input-container.md-input-has-value label:not(.md-no-float) {
       display: none !important;
     }
 
@@ -96,8 +98,25 @@ md-list-item.md-3-line div.md-button:first-child::before, md-list-item.md-3-line
 }
 
 
-md-list-item.md-3-line, md-list-item.md-3-line>._md-no-style{
-  min-height: 85px !important;
+home-content-wrapper {
+
+  md-list-item.md-3-line, md-list-item.md-3-line > ._md-no-style {
+    min-height: 85px !important;
+  }
+
+}
+
+.md-autocomplete-suggestions{
+
+  md-list-item.md-3-line{
+    min-height: 60px !important;
+  }
+
+  li{
+    height: 100% !important;
+
+  }
+
 }
 
 
@@ -105,17 +124,18 @@ md-list-item.md-3-line, md-list-item.md-3-line>._md-no-style{
 // reset ionic class for displaying
 // alphabetic name scrolls one below the other
 .pane{
-   position: relative;
-   overflow: inherit;
-   height: auto;
+  position: relative;
+  overflow: inherit;
+  height: auto;
 }
 
 // reset ionic style which was hiding display
 // when viewing at device resolution on chrome
 [nav-view="stage"] {
-    opacity: inherit;
+  opacity: inherit;
 }
 
 form{
-    width: 100%;
+  width: 100%;
 }
+
