@@ -59,6 +59,9 @@ a {
   position: absolute;
   bottom: 0;
 }
+.input-xt-large {
+  font-size: 48px;
+}
 .md-button.md-fab.bb-action-mini {
   width: 24px;
   height: 24px;
@@ -291,4 +294,18 @@ md-list-item {
 .md-virtual-repeat-container.md-autocomplete-suggestions-container {
   width: 100%;
   left: 4px !important;
+}
+.family-component-wrapper .family-name {
+  padding-top: 50px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.family-component-wrapper .family-name md-input-container label {
+  margin-bottom: -20px;
+}
+.family-component-wrapper .family-name input {
+  height: inherit;
+}
+.family-component-wrapper ion-footer-bar .md-button {
+  margin: 0;
 }

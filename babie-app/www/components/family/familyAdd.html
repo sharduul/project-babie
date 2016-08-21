@@ -1,3 +1,37 @@
-<div>
-  familyAdd
-</div>
+<md-card flex class="component-wrapper family-component-wrapper">
+  <div class="family-name">
+    <md-input-container class="md-block input-xt-large" flex-gt-sm>
+      <label>Family name</label>
+      <input ng-model="familyAdd.family.name">
+    </md-input-container>
+  </div>
+
+  <md-content class="md-padding autocomplete" layout="column">
+    <!--TODO: confirmation on-remove... I think its implemented in angular material 1.0.5 version-->
+    <md-contact-chips
+      ng-model="familyAdd.family.membersList"
+      md-contacts="familyAdd.querySearch($query)"
+      md-contact-name="name"
+      md-require-match="true"
+      md-highlight-flags="i"
+      filter-selected="true"
+      placeholder="Add members to your family"
+      secondary-placeholder="Add members..">
+    </md-contact-chips>
+    <md-list class="fixedRows">
+      <md-subheader class="md-no-sticky">Your Connections:</md-subheader>
+      <md-list-item class="md-2-line" ng-repeat="(index, connectionItem) in familyAdd.userConnections">
+        <img ng-src="http://lorempixel.com/400/400/" class="md-avatar" />
+        <div class="md-list-item-text compact">
+          <h3>{{ connectionItem.name }}</h3>
+        </div>
+      </md-list-item>
+    </md-list>
+  </md-content>
+
+  <ion-footer-bar align-title="left" class="bar bar-footer">
+    <md-button flex class="md-raised md-primary" aria-label="search">
+      Create Family
+    </md-button>
+  </ion-footer-bar>
+</md-card>
