@@ -10,6 +10,11 @@ Setup service on Heroku
     - git remote set-url heroku git@heroku.com:babie-service.git
     - cd .. (come to the parent directory of this sub-tree)
     - git subtree push --prefix babie-service heroku master
+    
+Deploy service on Heroku
+
+    - run build.ps1 script from babie-service folder
+       command: powershell "./build.ps1"
 
 
 Heroku error: Permission denied (publickey)
