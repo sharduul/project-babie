@@ -29,7 +29,9 @@
     </md-list>
   </md-content>
 
-  <ion-footer-bar align-title="left" class="bar bar-footer">
+  <ion-footer-bar align-title="left" layout="row" class="bar bar-footer">
+    <md-button ui-sref="app.home"
+               ui-sref-opts="{reload: true}">cancel</md-button>
     <md-button flex class="md-raised md-primary" aria-label="search">
       Create Family
     </md-button>
