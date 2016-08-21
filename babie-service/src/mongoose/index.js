@@ -1,4 +1,5 @@
 var mongoose = require('mongoose');
+mongoose.Promise = require('q').Promise;
 var config = require('./config.js');
 
 mongoose.connect('mongodb://' + config.mongo_host + ':' + config.mongo_port + '/heroku_cnndmbkh');
