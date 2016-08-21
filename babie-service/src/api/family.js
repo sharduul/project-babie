@@ -35,7 +35,7 @@ module.exports = function(app, dbqueries){
 // ********************** sample data for testing ***********************
 
     var testFamily = {
-        "familyId": 12334,
+        "familyId": 12336,
         "familyName": "first family",
         "memberList": [
             {
