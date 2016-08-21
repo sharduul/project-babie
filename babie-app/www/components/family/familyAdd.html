@@ -2,7 +2,7 @@
   <div class="family-name">
     <md-input-container class="md-block input-xt-large" flex-gt-sm>
       <label>Family name</label>
-      <input ng-model="familyAdd.family.name">
+      <input ng-model="familyAdd.family.familyName">
     </md-input-container>
   </div>
 
@@ -31,8 +31,10 @@
 
   <ion-footer-bar align-title="left" layout="row" class="bar bar-footer">
     <md-button ui-sref="app.home"
-               ui-sref-opts="{reload: true}">cancel</md-button>
-    <md-button flex class="md-raised md-primary" aria-label="search">
+               ui-sref-opts="{reload: true}">
+      cancel
+    </md-button>
+    <md-button flex class="md-raised md-primary" ng-click="familyAdd.save()" aria-label="search">
       Create Family
     </md-button>
   </ion-footer-bar>

@@ -6,14 +6,15 @@ angular
 	.module('babie.services', [])
 	.factory('apiResource', ApiResource);
 
-ApiResource.$inject = ['nameResource'];
+ApiResource.$inject = ['nameResource', 'familyResource'];
 
-function ApiResource(nameResource) {
-  
+function ApiResource(nameResource, familyResource) {
+
 	return {
-		name: nameResource
+		name: nameResource,
+    family: familyResource
 	}
-	
+
 }
 
 })();

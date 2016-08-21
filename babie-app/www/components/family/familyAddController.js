@@ -16,6 +16,7 @@
     };
 
     vm.querySearch = querySearch;
+    vm.save = save;
 
     (function(){
 
@@ -36,7 +37,6 @@
 
           // return this connection as a new member
           else if(connectionItem.name && connectionItem.name.toLowerCase().indexOf(query.toLowerCase()) > -1){
-            connectionItem.isNewMember = true;
             return true;
           }
 
@@ -45,6 +45,19 @@
       }
 
       return results;
+    }
+
+    function save(){
+
+      console.log(vm.family);
+
+      apiResource.family.family().save(vm.family, function(result){
+          console.log(result);
+          //$state.go('app.nameDetails', { nameId: result.nameId });
+      },
+      function (error) {
+        console.log(error);
+      });
     }
 
 
