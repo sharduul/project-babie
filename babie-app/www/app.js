@@ -62,6 +62,11 @@ function Config($stateProvider, $urlRouterProvider){
       templateUrl: "components/home/home.html",
       controller: 'homeController as home'
     })
+    .state('app.familyDetails', {
+      url: "/familyDetails",
+      templateUrl: "components/family/familyDetails.html",
+      controller: 'familyDetailsController as familyDetails'
+    })
     .state('familyAdd', {
        url: "/familyAdd",
        templateUrl: "components/family/familyAdd.html",

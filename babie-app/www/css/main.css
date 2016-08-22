@@ -265,7 +265,6 @@ md-list-item.md-3-line > ._md-no-style div.md-button:first-child::before {
   min-height: inherit !important;
 }
 .home-content-wrapper md-list {
-  overflow: auto;
   margin-bottom: 84px;
 }
 .md-autocomplete-suggestions md-list-item.md-3-line {
@@ -273,6 +272,9 @@ md-list-item.md-3-line > ._md-no-style div.md-button:first-child::before {
 }
 .md-autocomplete-suggestions li {
   height: 100% !important;
+}
+md-list {
+  overflow: auto;
 }
 .pane {
   position: relative;

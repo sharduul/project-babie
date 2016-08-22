@@ -1,0 +1,23 @@
+<md-card flex class="component-wrapper family-component-wrapper">
+  <md-content class="md-padding" layout="column">
+    <h2>Family Name</h2>
+  </md-content>
+
+  <md-content class="" layout="column">
+    <md-list class="">
+      <md-subheader class="">Baby names:</md-subheader>
+      <md-list-item class="md-3-line" ng-repeat="name in familyDetails.babyNames" ng-click="null">
+        <div class="md-list-item-text" layout="column" layout-align="center start">
+          <h3>{{ name.nameInfo }}</h3>
+          <p>{{ name.meaning[0].meaningInfo }}</p>
+          <div class="list-item-actions" layout="row" layout-align="start center">
+            <div layout="row" layout-align="start center">
+              <i class="material-icons">favorite</i>
+              <label>&nbsp;&nbsp;123 out of 123 members liked it.</label>
+            </div>
+          </div>
+        </div>
+      </md-list-item>
+    </md-list>
+  </md-content>
+</md-card>
