@@ -177,7 +177,6 @@ video {
   padding: 0;
   border: 0;
   outline: 0;
-  font-size: 100%;
   vertical-align: baseline;
   background: transparent;
   font-family: 'Source Sans Pro', sans-serif;
@@ -272,6 +271,9 @@ md-list-item.md-3-line > ._md-no-style div.md-button:first-child::before {
 }
 .md-autocomplete-suggestions li {
   height: 100% !important;
+}
+.family-component-wrapper .md-subheader ._md-subheader-inner {
+  padding: 5px;
 }
 md-list {
   overflow: auto;

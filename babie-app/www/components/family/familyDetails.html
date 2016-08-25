@@ -4,20 +4,52 @@
   </md-content>
 
   <md-content class="" layout="column">
-    <md-list class="">
-      <md-subheader class="">Baby names:</md-subheader>
-      <md-list-item class="md-3-line" ng-repeat="name in familyDetails.babyNames" ng-click="null">
-        <div class="md-list-item-text" layout="column" layout-align="center start">
-          <h3>{{ name.nameInfo }}</h3>
-          <p>{{ name.meaning[0].meaningInfo }}</p>
-          <div class="list-item-actions" layout="row" layout-align="start center">
-            <div layout="row" layout-align="start center">
-              <i class="material-icons">favorite</i>
-              <label>&nbsp;&nbsp;123 out of 123 members liked it.</label>
-            </div>
-          </div>
-        </div>
-      </md-list-item>
-    </md-list>
+      <ion-slide-box on-slide-changed="familyDetails.slideChanged($index)">
+        <ion-slide>
+          <md-list class="">
+            <md-subheader class="">
+              <div layout="row" layout-align="center center">
+                <span flex="30"></span>
+                <h4 flex>Baby names</h4>
+                <md-button flex="30" class="md-icon-button" ng-click="familyDetails.$ionicSlideBoxDelegate.next()" ng-show="familyDetails.slideIndex == 0">
+                  <i class="material-icons">keyboard_arrow_right</i>
+                </md-button>
+              </div>
+            </md-subheader>
+            <md-list-item class="md-3-line" ng-repeat="name in familyDetails.babyNames" ng-click="null">
+              <div class="md-list-item-text" layout="column" layout-align="center start">
+                <h3>{{ name.nameInfo }}</h3>
+                <p>{{ name.meaning[0].meaningInfo }}</p>
+                <div class="list-item-actions" layout="row" layout-align="start center">
+                  <div layout="row" layout-align="start center">
+                    <i class="material-icons">favorite</i>
+                    <label>&nbsp;&nbsp;123 out of 123 members liked it.</label>
+                  </div>
+                </div>
+              </div>
+            </md-list-item>
+          </md-list>
+        </ion-slide>
+        <ion-slide>
+          <md-list class="">
+            <md-subheader class="">
+              <div layout="row" layout-align="center center">
+                <md-button flex="30" class="md-icon-button" ng-click="familyDetails.$ionicSlideBoxDelegate.previous()" ng-show="familyDetails.slideIndex == 1">
+                  <i class="material-icons">keyboard_arrow_left</i>
+                </md-button>
+                <h4 flex>Members</h4>
+                <span flex="30"></span>
+              </div>
+            </md-subheader>
+            <md-list-item class="md-1-line" ng-repeat="name in familyDetails.babyNames" ng-click="null" layout="row">
+                <h3 flex>{{ name.nameInfo }}</h3>
+                <md-button flex="10" class="md-icon-button">
+                  <i class="material-icons">clear</i>
+                </md-button>
+              <md-divider></md-divider>
+            </md-list-item>
+          </md-list>
+        </ion-slide>
+      </ion-slide-box>
   </md-content>
 </md-card>
