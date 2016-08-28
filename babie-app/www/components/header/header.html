@@ -2,12 +2,14 @@
 <md-content class="header-bar md-default-theme">
     <div layout="row" layout-align="start center">
     	<div layout="row" layout-align="start center" ng-if="!header.searchActivated">
-	      	<h2 class="md-toolbar-tools">
-	        	<span>Babie</span>
-	    	</h2>
-	    	<md-button class="md-icon-button" aria-label="search"  ng-click="header.toggleSearch()">
+        <md-button flex="10" class=""
+                   ui-sref="app.home" ui-sref-opts="{reload: true}">
+          Babie
+        </md-button>
+        <span flex></span>
+	    	<md-button flex="10" class="md-icon-button" aria-label="search"  ng-click="header.toggleSearch()">
 	          <i class="material-icons">search</i>
-	        </md-button>
+        </md-button>
     	</div>
     	<div layout="row" layout-align="end center" flex ng-if="header.searchActivated" class="search-wrapper">
 	        <form ng-submit="$event.preventDefault()" name="searchForm">

@@ -10,7 +10,8 @@ angular
                     'babie.services',
                     'babie.components.home',
                     'babie.components.header',
-                    'babie.components.family'])
+                    'babie.components.family',
+                    'babie.components.user'])
   .run(Run)
   .config(Config)
 
@@ -67,6 +68,11 @@ function Config($stateProvider, $urlRouterProvider){
       templateUrl: "components/family/familyDetails.html",
       controller: 'familyDetailsController as familyDetails'
     })
+     .state('app.userDetails', {
+       url: "/userDetails",
+       templateUrl: "components/user/userDetails.html",
+       controller: 'userDetailsController as userDetails'
+     })
     .state('familyAdd', {
        url: "/familyAdd",
        templateUrl: "components/family/familyAdd.html",
