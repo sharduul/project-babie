@@ -2,6 +2,19 @@ var Family = require('../models').familyModel;
 
 module.exports = function(app, dbqueries){
 
+
+    // API to get ALL FAMILIES
+    app.get('/api/family', function(req, res){
+
+        Family.find({}, function(err, families){
+            if(err){
+                return res.send(err);
+            }
+            res.send(families);
+            console.log("success families");
+        });
+    });
+
     // API to add a new name to the database
 	 app.post('/api/family', function(req, res){
 

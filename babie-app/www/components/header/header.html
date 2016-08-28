@@ -23,11 +23,12 @@
                   md-item-text="item.nameInfo"
                   md-floating-label="Search here..">
                 <md-item-template>
-                  <md-list-item class="md-3-line">
+                  <md-list-item class="md-3-line" layout="row">
                     <div class="md-list-item-text" layout="column" layout-align="center start">
                       <h3>{{ item.nameInfo }}</h3>
                       <p>{{ item.meaning[0].meaningInfo }}</p>
                     </div>
+                    <add-to-family></add-to-family>
                   </md-list-item>
                 </md-item-template>
               </md-autocomplete>

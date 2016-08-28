@@ -8,6 +8,7 @@ angular
                     'ngMaterial',
                     'ngResource',
                     'babie.services',
+                    'babie.directives',
                     'babie.components.home',
                     'babie.components.header',
                     'babie.components.family',
