@@ -23,14 +23,14 @@ function addToFamily($timeout, $ionicPopup, apiResource) {
       $scope.allFamilies = [];
 
       var template =  '<md-list class="">' +
-                        '<md-list-item class="md-2-line" layout="row" ng-repeat="family in allFamilies">' +
+                        '<md-list-item class="md-2-line" layout="row" ng-repeat="family in allFamilies" ng-click="family.addToFamily = !family.addToFamily">' +
                           '<h3 flex="80">{{ family.familyName }}</h3>' +
-                          '<div flex="20"><md-button class="md-icon-button" aria-label="add" ng-if="!family.addToFamily" ng-click="family.addToFamily = true">' +
+                          '<div flex="20" aria-label="add" ng-if="!family.addToFamily">' +
                             '<i class="material-icons">add_circle</i>' +
-                          '</md-button>' +
-                          '<md-button class="md-icon-button" aria-label="remove" ng-if="family.addToFamily" ng-click="family.addToFamily = false">' +
+                          '</div>' +
+                          '<div class="md-icon-button" aria-label="remove" ng-if="family.addToFamily">' +
                             '<i class="material-icons">check</i>' +
-                          '</md-button></div>' +
+                          '</div>' +
                         '</md-list-item>' +
                       '</md-list>';
 
@@ -55,24 +55,12 @@ function addToFamily($timeout, $ionicPopup, apiResource) {
                 text: '<b>Save</b>',
                 type: 'button-positive',
                 onTap: function(e) {
-                  if (!$scope.data.wifi) {
-                    //don't allow the user to close unless he enters wifi password
-                    e.preventDefault();
-                  } else {
-                    return $scope.data.wifi;
-                  }
+                  console.log("PUT family");
                 }
               }
             ]
           });
 
-          //myPopup.then(function(res) {
-          //  console.log('Tapped!', res);
-          //});
-
-          //$timeout(function() {
-          //  myPopup.close(); //close the popup after 3 seconds for some reason
-          //}, 3000);
 
         });
 
@@ -91,12 +79,9 @@ function addToFamily($timeout, $ionicPopup, apiResource) {
 
       };
 
-
-
-
     }
   };
 
-  };
+}
 
 })();
