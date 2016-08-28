@@ -12,17 +12,25 @@ function addToFamily($timeout, $ionicPopup, apiResource) {
 
   return {
     restrict: 'E', // E = element, A = attribute, C = class, M = comment
-    template: '<md-button flex class="md-icon-button" aria-label="add" add-to-family ng-click="showPopup()">' +
+    template: '<md-button flex class="md-icon-button" aria-label="add" ng-click="showPopup()">' +
                 '<i class="material-icons">group_add</i>' +
               '</md-button>',
     scope:{
     },
     link: function ($scope, element) {
 
-      var allFamilies = [];
-      var template =  '<md-list class="fixedRows">' +
-                        '<md-list-item class="md-2-line" ng-repeat="(index, family) in allFamilies">' +
-                          '<h3>{{ family.familyName }}</h3>' +
+      $scope.allFamilies = [];
+      $scope.allFamilies = [];
+
+      var template =  '<md-list class="">' +
+                        '<md-list-item class="md-2-line" layout="row" ng-repeat="family in allFamilies">' +
+                          '<h3 flex="80">{{ family.familyName }}</h3>' +
+                          '<div flex="20"><md-button class="md-icon-button" aria-label="add" ng-if="!family.addToFamily" ng-click="family.addToFamily = true">' +
+                            '<i class="material-icons">add_circle</i>' +
+                          '</md-button>' +
+                          '<md-button class="md-icon-button" aria-label="remove" ng-if="family.addToFamily" ng-click="family.addToFamily = false">' +
+                            '<i class="material-icons">check</i>' +
+                          '</md-button></div>' +
                         '</md-list-item>' +
                       '</md-list>';
 
@@ -58,13 +66,13 @@ function addToFamily($timeout, $ionicPopup, apiResource) {
             ]
           });
 
-          myPopup.then(function(res) {
-            console.log('Tapped!', res);
-          });
+          //myPopup.then(function(res) {
+          //  console.log('Tapped!', res);
+          //});
 
-          $timeout(function() {
-            myPopup.close(); //close the popup after 3 seconds for some reason
-          }, 3000);
+          //$timeout(function() {
+          //  myPopup.close(); //close the popup after 3 seconds for some reason
+          //}, 3000);
 
         });
 
@@ -74,7 +82,7 @@ function addToFamily($timeout, $ionicPopup, apiResource) {
       getUserFamilies = function(){
 
          return apiResource.family.family().get({}, function(result){
-             allFamilies = result;
+             $scope.allFamilies = result;
             console.log(result);
           },
           function (error) {
