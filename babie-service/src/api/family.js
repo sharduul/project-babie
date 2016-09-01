@@ -3,10 +3,23 @@ var Family = require('../models').familyModel;
 module.exports = function(app, dbqueries){
 
 
-    // API to get ALL FAMILIES
+    // API to get ALL FAMILIES (with filter)
     app.get('/api/family', function(req, res){
 
-        Family.find({}, function(err, families){
+        var operands = {};
+        var filterObject = {};
+
+
+        // if the API call has filter request then process it
+        if(req.query.filter){
+            // get the lhs and the rhs of the filter
+            operands = getOperands(req.query.filter);
+
+            filterObject = {};
+            filterObject[getFilterProperty(operands.lhs)] = operands.rhs;
+        }
+
+        Family.find(filterObject, function(err, families){
             if(err){
                 return res.send(err);
             }
@@ -14,6 +27,8 @@ module.exports = function(app, dbqueries){
             console.log("success families");
         });
     });
+
+
 
     // API to add a new name to the database
 	 app.post('/api/family', function(req, res){
@@ -41,6 +56,7 @@ module.exports = function(app, dbqueries){
 	 });
 
 
+
     // API to edit family details
     app.put('/api/family/:familyId', function(req, res){
 
@@ -65,6 +81,34 @@ module.exports = function(app, dbqueries){
 
 
 // ********************* private functions **********************************************
+
+
+
+
+// utility function to get the operands of the filter provided in the request
+function getOperands(expression){
+    var operands = expression.split('equals').map(function (item){
+        return item.trim()
+    });
+
+    operands.lhs = operands[0];
+    operands.rhs = operands[1];
+
+    return operands;
+}
+
+
+// map the filter props to the actual properties in the database
+function getFilterProperty(prop){
+
+    var familyFilterProps = {
+        memberId: 'memberList.memberId'
+    };
+
+    return familyFilterProps[prop];
+
+}
+
 
 
 
