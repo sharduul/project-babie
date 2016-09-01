@@ -41,6 +41,29 @@ module.exports = function(app, dbqueries){
 	 });
 
 
+    // API to edit family details
+    app.put('/api/family/:familyId', function(req, res){
+
+        Family.findOne({ familyId: req.params.familyId }, function(err, family){
+
+            family.familyName = req.body.familyName;
+            family.memberList = req.body.memberList;
+            family.nameList = req.body.nameList;
+
+            family.save(function(err) {
+                if (err){
+                    res.send(err);
+                }
+
+                console.log("success families PUT");
+                res.json(family);
+            });
+
+        });
+
+    });
+
+
 // ********************* private functions **********************************************
 
 
