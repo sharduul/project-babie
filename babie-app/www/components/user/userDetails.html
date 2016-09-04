@@ -8,9 +8,9 @@
       <md-subheader class="" layout="row" layout-align="center center">
         <h4 flex>Families</h4>
       </md-subheader>
-      <md-list-item class="md-1-line" ng-repeat="name in userDetails.babyNames" ng-click="null" layout="row">
-        <h3 flex>{{ name.nameInfo }}</h3>
-        <md-button flex="10" class="md-icon-button">
+      <md-list-item class="md-1-line" ng-repeat="family in userDetails.user.families" ng-click="null" layout="row">
+        <h3 flex>{{ family.familyName }}</h3>
+        <md-button flex="10" class="md-icon-button" ng-click="userDetails.showConfirm($event)">
           <i class="material-icons">clear</i>
         </md-button>
         <md-divider></md-divider>

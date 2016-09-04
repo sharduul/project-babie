@@ -6,20 +6,39 @@
 		.module('babie.components.user', ['ionic'])
 		.controller('userDetailsController', userDetailsController);
 
-  userDetailsController.$inject = ['apiResource', 'helperService'];
+  userDetailsController.$inject = ['apiResource', 'helperService', '$mdDialog'];
 
-	function userDetailsController(apiResource, helperService) {
+	function userDetailsController(apiResource, helperService, $mdDialog) {
 		var vm = this;
+
+    vm.user = {};
+
+    vm.showConfirm = showConfirm;
 
 		(function(){
 
       apiResource.user.user().get({ userId: "aaa@bbb.com" }, function(result){
         console.log(result);
+        vm.user = result;
       });
 
 		})();
 
-    vm.babyNames = [{"_id":"5528a260b77373e106cd386c","nameId":1536,"nameInfo":"Om","gender":"boy","labels":[],"meaning":[{"meaningId":308,"meaningInfo":"Omkar; Creation; The essence of life","_id":"5528a260b77373e106cd3f04"}]},{"_id":"5528a260b77373e106cd3684","nameId":1537,"nameInfo":"Om Prakash","gender":"boy","labels":[],"meaning":[{"meaningId":672,"meaningInfo":"The light of creation; Light of the essence of life","_id":"5528a260b77373e106cd3d1c"}]},{"_id":"5528a260b77373e106cd3775","nameId":1538,"nameInfo":"Omkar","gender":"boy","labels":[],"meaning":[{"meaningId":1399,"meaningInfo":"Beginning of Life; Creator of OM","_id":"5528a260b77373e106cd3e0d"}]},{"_id":"5528a260b77373e106cd3813","nameId":468,"nameInfo":"Oorja","gender":"girl","labels":[],"meaning":[{"meaningId":1185,"meaningInfo":"Energy","_id":"5528a260b77373e106cd3eab"}]},{"_id":"5528a260b77373e106cd3438","nameId":469,"nameInfo":"Oormila","gender":"girl","labels":[],"meaning":[{"meaningId":1550,"meaningInfo":"Daughter of King Janaka of Mithila; The youger sister of Sita; Name of Lakshman's wife","_id":"5528a260b77373e106cd3ad0"}]}];
+    function showConfirm(event){
+
+      var confirm = $mdDialog.confirm()
+        .title('Are you sure?')
+        .ariaLabel('Lucky day')
+        .targetEvent(event)
+        .ok('Delete')
+        .cancel('Cancel');
+      $mdDialog.show(confirm).then(function() {
+        $scope.status = 'You decided to get rid of your debt.';
+      }, function() {
+
+      });
+
+    }
 
   }
 
