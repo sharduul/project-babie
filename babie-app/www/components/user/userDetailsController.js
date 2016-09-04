@@ -24,7 +24,7 @@
 
 		})();
 
-    function showConfirm(event){
+    function showConfirm(event, family){
 
       var confirm = $mdDialog.confirm()
         .title('Are you sure?')
@@ -33,11 +33,22 @@
         .ok('Delete')
         .cancel('Cancel');
       $mdDialog.show(confirm).then(function() {
-        $scope.status = 'You decided to get rid of your debt.';
+        deleteFamily(family);
       }, function() {
 
       });
 
+    }
+
+
+    function deleteFamily(familyParam){
+      vm.user.families = _.filter(vm.user.families, function(family){
+        return family.familyId != familyParam.familyId;
+      });
+
+      apiResource.user.user().update({ userId: "aaa@bbb.com" }, vm.user, function(result){
+        vm.user = result;
+      });
     }
 
   }
