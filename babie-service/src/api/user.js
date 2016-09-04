@@ -10,7 +10,6 @@ module.exports = function(app, dbqueries){
                 return res.send(err);
             }
             res.send(users);
-            console.log("success families");
         });
     });
 
@@ -22,8 +21,29 @@ module.exports = function(app, dbqueries){
                 return res.send(err);
             }
             res.send(users);
-            console.log("success families");
         });
+    });
+
+
+    // API to edit family details
+    app.put('/api/user/:userId', function(req, res){
+
+        User.findOne({ userId: req.params.userId }, function(err, user){
+
+            user.userName = req.body.userName;
+            user.families = req.body.families;
+
+            user.save(function(err) {
+                if (err){
+                    res.send(err);
+                }
+
+                console.log("success user PUT");
+                res.json(user);
+            });
+
+        });
+
     });
 
 
