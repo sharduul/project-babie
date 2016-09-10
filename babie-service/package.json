@@ -1,18 +1,19 @@
 {
-  "name"          : "babie-service",
-  "version"       : "0.0.1",
-  "description"   : "Service side of the application",
-  "main"          : "server.js",
-  "author"        : "Shardul",
-  "dependencies"  : {
-    "express"     : "latest",
-    "request"     : "latest",
-    "mongoose"    : "latest",
-    "body-parser" : "*",
-    "gulp"        : "latest",
-    "gulp-jshint" : "latest",
-    "lodash"      : "latest",
-    "q"           : "latest",
-    "cors"        : "latest"
+  "name": "babie-service",
+  "version": "0.0.1",
+  "description": "Service side of the application",
+  "main": "server.js",
+  "author": "Shardul",
+  "dependencies": {
+    "body-parser": "*",
+    "cors": "latest",
+    "express": "latest",
+    "gulp": "latest",
+    "gulp-jshint": "latest",
+    "lodash": "latest",
+    "lodash-node": "^3.10.2",
+    "mongoose": "latest",
+    "q": "latest",
+    "request": "latest"
   }
 }

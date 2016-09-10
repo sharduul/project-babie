@@ -19,7 +19,8 @@ function FamilyResource($resource, helperService) {
 
 		return $resource(helperService.baseUrl + 'api/family/:familyId', { familyId: '@familyId' }, {
 			get: { method: 'GET', isArray: true, cache: false },
-			save: { method: 'POST' }
+			save: { method: 'POST' },
+			update: { method: 'PUT' }
 		});
 
 		// ********* for reference when you implement login and have tokens *********

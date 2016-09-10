@@ -16,14 +16,17 @@ function addToFamily($timeout, $ionicPopup, apiResource) {
                 '<i class="material-icons">group_add</i>' +
               '</md-button>',
     scope:{
+      name: '='
     },
     link: function ($scope, element) {
 
       $scope.allFamilies = [];
-      $scope.allFamilies = [];
+      $scope.selectedFamilies = [];
+
+      $scope.addToFamily = addToFamily;
 
       var template =  '<md-list class="">' +
-                        '<md-list-item class="md-2-line" layout="row" ng-repeat="family in allFamilies" ng-click="family.addToFamily = !family.addToFamily">' +
+                        '<md-list-item class="md-2-line" layout="row" ng-repeat="family in allFamilies" ng-click="addToFamily(family)">' +
                           '<h3 flex="80">{{ family.familyName }}</h3>' +
                           '<div flex="20" aria-label="add" ng-if="!family.addToFamily">' +
                             '<i class="material-icons">add_circle</i>' +
@@ -55,7 +58,17 @@ function addToFamily($timeout, $ionicPopup, apiResource) {
                 text: '<b>Save</b>',
                 type: 'button-positive',
                 onTap: function(e) {
-                  console.log("PUT family");
+                  _.forEach($scope.selectedFamilies, function(family){
+                    apiResource.family.family().update({ familyId: family.familyId }, family, function(result){
+                      $scope.allFamilies = result;
+                      console.log(result);
+                    },
+                    function (error) {
+                      console.log(error);
+                    });
+
+                  });
+
                 }
               }
             ]
@@ -66,12 +79,30 @@ function addToFamily($timeout, $ionicPopup, apiResource) {
 
       };
 
+      function addToFamily(family){
+        var index = _.findIndex(family.nameList, { 'nameID': $scope.name.nameId });
+        if(index < 0){
+
+          var nameToAdd = {
+            "addedByMemberId": "abc1@abc.com",
+            "gender": $scope.name.gender,
+            "nameId": $scope.name.nameId,
+            "nameInfo": $scope.name.nameInfo
+          };
+
+          family.nameList.push(nameToAdd);
+          $scope.selectedFamilies.push(family);
+
+        }
+
+        family.addToFamily = !family.addToFamily;
+      }
+
 
       getUserFamilies = function(){
 
-         return apiResource.family.family().get({}, function(result){
-             $scope.allFamilies = result;
-            console.log(result);
+         return apiResource.family.family().get({ filter: "memberId equals zxx@xxx.com"}, function(result){
+            $scope.allFamilies = result;
           },
           function (error) {
             console.log(error);

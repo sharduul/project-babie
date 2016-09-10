@@ -1,4 +1,5 @@
 var Family = require('../models').familyModel;
+var _ = require('lodash-node');
 
 module.exports = function(app, dbqueries){
 
@@ -20,6 +21,11 @@ module.exports = function(app, dbqueries){
         }
 
         Family.find(filterObject, function(err, families){
+
+            families = _.map(families, function(family) {
+                return _.pick(family, ['familyId', 'familyName', 'admin', 'nameList', 'memberList']);
+            });
+
             if(err){
                 return res.send(err);
             }
@@ -69,6 +75,7 @@ module.exports = function(app, dbqueries){
             family.save(function(err) {
                 if (err){
                     res.send(err);
+                    return;
                 }
 
                 console.log("success families PUT");
