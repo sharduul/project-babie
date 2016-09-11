@@ -12,10 +12,13 @@
 		var vm = this;
 
 		vm.alphabeticNames = [];
+    vm.currentGender = "all";
+		vm.genderSwitch = ["boy", "girl", "all"];
 		vm.alphabetArray = helperService.alphabetString().split('');
 
     vm.getNamesByAlphabet = getNamesByAlphabet;
     vm.like = like;
+    vm.changeGender = changeGender;
 
 		(function(){
 
@@ -46,7 +49,24 @@
     }
 
 
+    // gender change also takes into consideration the alphabet clicked
+    function changeGender(){
+      var filterString = "";
+      if(vm.selectedAlphabet){
+        filterString = "search equals " + vm.selectedAlphabet + " and ";
+      }
+
+      filterString += vm.currentGender == "all" ? "" : "gender equals " + vm.currentGender;
+
+      apiResource.name.name().get({filter: filterString, page: 1, size: 10}, function(result){
+        vm.alphabeticNames[0] = result;
+      });
+    }
+
+
     function getNamesByAlphabet(alphabet){
+      vm.currentGender = "all"; // reset gender filter when alphabet is clicked
+
       vm.selectedAlphabet = alphabet;
       apiResource.name.name().get({filter: "search equals " + alphabet, page: 1, size: 10}, function(result){
         vm.alphabeticNames[0] = result;
