@@ -6,18 +6,24 @@
 		.module('babie.components.family')
 		.controller('familyDetailsController', familyDetailsController);
 
-  familyDetailsController.$inject = ['$q', '$timeout', 'apiResource', '$ionicSlideBoxDelegate'];
+  familyDetailsController.$inject = ['$q', '$timeout', 'apiResource', '$ionicSlideBoxDelegate', '$state'];
 
-	function familyDetailsController($q, $timeout, apiResource, $ionicSlideBoxDelegate) {
+	function familyDetailsController($q, $timeout, apiResource, $ionicSlideBoxDelegate, $state) {
 		var vm = this;
+    var familyId = $state.params.familyId;
 
-    vm.babyNames = [];
+    vm.family = {};
     vm.slideIndex = 0;
     vm.$ionicSlideBoxDelegate = $ionicSlideBoxDelegate;
 
     vm.slideChanged = slideChanged;
 
     (function(){
+
+      apiResource.family.family().get({ familyId: familyId }, function(result){
+        console.log(result);
+        vm.family = result;
+      });
 
 
 		})();

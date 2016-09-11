@@ -18,7 +18,8 @@ function FamilyResource($resource, helperService) {
 	function family(){
 
 		return $resource(helperService.baseUrl + 'api/family/:familyId', { familyId: '@familyId' }, {
-			get: { method: 'GET', isArray: true, cache: false },
+			get: { method: 'GET', isArray: false, cache: false },
+			query: { method: 'GET', isArray: true, cache: false },
 			save: { method: 'POST' },
 			update: { method: 'PUT' }
 		});

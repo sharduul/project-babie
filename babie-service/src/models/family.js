@@ -15,8 +15,9 @@ var FamilySchema = new Schema({
         {
             nameID: { type: Number },
             nameInfo: { type: String },
+            meaning: { type: String },
             gender: { type: String },
-            upVote: { type: Number },
+            memberLikes: { type: Number },
             addedByMemberId: { type: String, require: true } // memberId : mostly email
         }
     ],

@@ -84,10 +84,11 @@ function addToFamily($timeout, $ionicPopup, apiResource) {
         if(index < 0){
 
           var nameToAdd = {
-            "addedByMemberId": "abc1@abc.com",
-            "gender": $scope.name.gender,
             "nameId": $scope.name.nameId,
-            "nameInfo": $scope.name.nameInfo
+            "nameInfo": $scope.name.nameInfo,
+            "meaning": $scope.name.meaning[0].meaningInfo,
+            "gender": $scope.name.gender,
+            "addedByMemberId": "abc1@abc.com"
           };
 
           family.nameList.push(nameToAdd);
@@ -101,7 +102,7 @@ function addToFamily($timeout, $ionicPopup, apiResource) {
 
       getUserFamilies = function(){
 
-         return apiResource.family.family().get({ filter: "memberId equals zxx@xxx.com"}, function(result){
+         return apiResource.family.family().query({ filter: "memberId equals zxx@xxx.com"}, function(result){
             $scope.allFamilies = result;
           },
           function (error) {
