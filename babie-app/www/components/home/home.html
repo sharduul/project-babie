@@ -1,14 +1,24 @@
-<md-card flex class="component-wrapper">
+<md-card class="component-wrapper">
   <md-toolbar class="bb-home-toolbar">
-    <md-button class="md-fab bb-action-mini" aria-label="alphabets"
-               ng-click="home.getNamesByAlphabet(alphabet)"
-               ng-class="{ selected: home.selectedAlphabet == alphabet }"
-               ng-repeat="alphabet in home.alphabetArray">
-      {{ alphabet }}
-    </md-button>
+    <div>
+      <md-button class="md-fab bb-action-mini" aria-label="alphabets"
+                 ng-click="home.getNamesByAlphabet(alphabet)"
+                 ng-class="{ selected: home.selectedAlphabet == alphabet }"
+                 ng-repeat="alphabet in home.alphabetArray">
+        {{ alphabet }}
+      </md-button>
+    </div>
+    <div>
+      <ion-radio ng-repeat="item in home.genderSwitch"
+                 ng-value="item"
+                 ng-model="home.currentGender"
+                 ng-change="home.changeGender()">
+        {{ item | uppercase }}
+      </ion-radio>
+    </div>
   </md-toolbar>
 
-  <md-card-content layout="column" class="virtualRepeatdemoVerticalUsage home-content-wrapper">
+  <md-card-content class="virtualRepeatdemoVerticalUsage home-content-wrapper">
     <md-list>
       <md-list-item class="md-3-line" ng-repeat="name in home.alphabeticNames[0]" ng-click="null">
         <div class="md-list-item-text" layout="column" layout-align="center start">

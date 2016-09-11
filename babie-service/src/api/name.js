@@ -1,6 +1,6 @@
 var Name = require('../models').nameModel;
 var Meaning = require('../models').meaningModel;
-
+var _ = require('lodash-node');
 
 module.exports = function(app, dbqueries){
 
@@ -12,23 +12,29 @@ module.exports = function(app, dbqueries){
                 return res.send(err);
             }
             res.send(name);
-            console.log("success /:nameId");
         });
     });
 
 
-	// API to get all the names
+	// API to get all the names (with filter)
 	app.get('/api/name', function(req, res){
 
         // get the lhs and the rhs of the filter
-        var operands = getOperands(req.query.filter);
-
+        var operandsList = getOperandsList(req.query.filter);
         var filterObject = {};
 
-        // '^' takes care of "starts with" filter
-        // if you don't provide '^'... then it will run "contains" filter
-        filterObject.nameInfo = new RegExp('^' + operands.rhs, "i");
+        _.forEach(operandsList, function (operands){
+            if(operands.lhs == 'search'){
+                // '^' takes care of "starts with" filter
+                // if you don't provide '^'... then it will run "contains" filter
+                filterObject.nameInfo = new RegExp('^' + operands.rhs, "i");
+            } else{
+                filterObject[operands.lhs] = operands.rhs;
+            }
 
+        });
+
+        console.log(filterObject);
 
         // get the pagination params from provided query params- page and size
         var paginationParams = getPaginationParams(req.query);
@@ -40,8 +46,6 @@ module.exports = function(app, dbqueries){
                 return res.send(err);
             }
             res.send(names);
-
-            console.log("success /name");
         });
     });
 
@@ -86,7 +90,6 @@ module.exports = function(app, dbqueries){
                     return;
                 }
 
-                console.log("success name PUT");
                 res.json(name);
             });
 
@@ -138,15 +141,30 @@ module.exports = function(app, dbqueries){
     }
 
     // utility function to get the operands of the filter provided in the request
-    function getOperands(expression){
-        var operands = expression.split('equals').map(function (item){
+    function getOperandsList(expression){
+
+        console.log(expression);
+
+        var operandsList = [];
+        var expressionList = expression.split('and').map(function (item){
             return item.trim()
         });
 
-        operands.lhs = operands[0];
-        operands.rhs = operands[1];
+        _.forEach(expressionList, function (currentExpression){
 
-        return operands;
+            var operandArray = currentExpression.split('equals').map(function (item){
+                return item.trim()
+            });
+
+            var operand = {
+                lhs: operandArray[0],
+                rhs: operandArray[1]
+            }
+
+            operandsList.push(operand);
+        });
+
+        return operandsList;
     }
 
 
