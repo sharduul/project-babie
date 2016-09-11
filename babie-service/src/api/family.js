@@ -3,6 +3,18 @@ var _ = require('lodash-node');
 
 module.exports = function(app, dbqueries){
 
+    // API to get a family by familyID
+    app.get('/api/family/:familyId', function(req, res){
+
+        Family.findOne({familyId: req.params.familyId}, function(err, family){
+            if(err){
+                return res.send(err);
+            }
+            res.send(family);
+            console.log("success /:familyId");
+        });
+    });
+
 
     // API to get ALL FAMILIES (with filter)
     app.get('/api/family', function(req, res){
