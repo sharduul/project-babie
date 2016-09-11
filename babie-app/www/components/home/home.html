@@ -16,8 +16,10 @@
           <p>{{ name.meaning[0].meaningInfo }}</p>
           <div class="list-item-actions" layout="row" layout-align="start center">
             <div layout="row" layout-align="start center">
-              <i class="material-icons">favorite</i>
-              <label>123</label>
+              <md-button flex class="md-icon-button" aria-label="like" ng-click="home.like(name)">
+                <i class="material-icons">favorite</i>
+              </md-button>
+              <label>{{ name.likes ? name.likes : 0 }}</label>
             </div>
             <add-to-family name="name"></add-to-family>
           </div>

@@ -11,7 +11,7 @@ var NameSchema = new Schema({
 		    meaningInfo: {type: String}
 	    }
     ],
-	upVote: {type: Number},
+    likes: {type: Number},
 	viewCount: {type: Number},
 	labels: [
 		{

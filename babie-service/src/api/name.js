@@ -71,6 +71,29 @@ module.exports = function(app, dbqueries){
 
 	 });
 
+    // API to edit name details
+    app.put('/api/name/:nameId', function(req, res){
+
+        Name.findOne({ nameId: req.params.nameId }, function(err, name){
+
+            // NOTE: right now PUT API supports only likes
+            // need to be more intelligent once we support more functionality
+            name.likes = name.likes ? name.likes + 1 : 1;
+
+            name.save(function(err) {
+                if (err){
+                    res.send(err);
+                    return;
+                }
+
+                console.log("success name PUT");
+                res.json(name);
+            });
+
+        });
+
+    });
+
 
     // API to add a meaning to the name
     app.post('/api/name/:nameId/meaning', function(req, res){

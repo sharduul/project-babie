@@ -20,7 +20,8 @@ function NameResource($resource, helperService) {
 
 		return $resource(helperService.baseUrl + 'api/name/:nameId', { nameId: '@nameId' }, {
 			get: { method: 'GET', isArray: true, cache: false },
-			save: { method: 'POST' }
+			save: { method: 'POST' },
+			update: { method: 'PUT' }
 		});
 
 		// ********* for reference when you implement login and have tokens *********
@@ -32,7 +33,7 @@ function NameResource($resource, helperService) {
 
 		// 	    }
 		// 	});
-		
+
 	}
 
 	function meaning(){

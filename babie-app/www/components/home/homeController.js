@@ -15,6 +15,7 @@
 		vm.alphabetArray = helperService.alphabetString().split('');
 
     vm.getNamesByAlphabet = getNamesByAlphabet;
+    vm.like = like;
 
 		(function(){
 
@@ -33,6 +34,16 @@
         });
 
 		})();
+
+
+    function like(name){
+      name.likes = name.likes ? name.likes + 1 : 1;
+
+      apiResource.name.name().update({ nameId: name.nameId }, name, function(result){
+        console.log(result);
+      });
+
+    }
 
 
     function getNamesByAlphabet(alphabet){
