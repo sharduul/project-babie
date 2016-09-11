@@ -6,8 +6,6 @@ No! It is not a just-another-app for searching baby names. It is more than that.
 
 
 TODO list: 
-- girl boy filter
-- search name and add to family
 - family create -> redirect to family details
 - scrape more names
 
