@@ -41,9 +41,10 @@
                 <span flex="30"></span>
               </div>
             </md-subheader>
-            <md-list-item class="md-1-line" ng-repeat="name in familyDetails.babyNames" ng-click="null" layout="row">
-                <h3 flex>{{ name.nameInfo }}</h3>
-                <md-button flex="10" class="md-icon-button">
+            <md-list-item class="md-1-line" ng-repeat="member in familyDetails.family.memberList" ng-click="null" layout="row">
+                <h3 flex>{{ member.memberName }}</h3>
+                <!--TODO: remove member should only be available to admin of the family-->
+                <md-button flex="10" class="md-icon-button" ng-click="familyDetails.removeMember(member)">
                   <i class="material-icons">clear</i>
                 </md-button>
               <md-divider></md-divider>
