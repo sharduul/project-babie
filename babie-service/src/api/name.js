@@ -34,14 +34,12 @@ module.exports = function(app, dbqueries){
 
         });
 
-        console.log(filterObject);
-
         // get the pagination params from provided query params- page and size
         var paginationParams = getPaginationParams(req.query);
 
         // skip and limit params are used to implement pagination
         // Name.find(query, fields, {skip, limit}, callback function)
-		Name.find(filterObject, {}, { skip: paginationParams.skip, limit: paginationParams.limit }, function(err, names){
+		Name.find(filterObject, {}, { skip: paginationParams.skip, limit: +paginationParams.limit }, function(err, names){
             if(err){
                 return res.send(err);
             }
