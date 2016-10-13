@@ -1,5 +1,5 @@
 
-module.exports = function(app){
+module.exports = function(app, optionalParams){
 
 	app.get('/', function(req, res){
 
@@ -13,7 +13,7 @@ module.exports = function(app){
 	// require all the apis here
     require('./name.js')(app, dbqueries);
     require('./family.js')(app, dbqueries);
-    require('./user.js')(app, dbqueries);
+    require('./user.js')(app, dbqueries, optionalParams.jwt);
     require('./label.js')(app);
 
 };

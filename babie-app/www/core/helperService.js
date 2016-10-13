@@ -14,8 +14,8 @@ function HelperService() {
 		startsWith: startsWith
 	};
 
-	//var baseUrl = 'http://localhost:8000/';
-	var baseUrl = 'http://babie-service.herokuapp.com/';
+	var baseUrl = 'http://localhost:8000/';
+	//var baseUrl = 'http://babie-service.herokuapp.com/';
 
 	function startsWith(input){
 		return new RegExp('^' + input, 'g');

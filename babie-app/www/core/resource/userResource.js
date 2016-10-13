@@ -11,7 +11,8 @@ UserResource.$inject = ['$resource', 'helperService'];
 function UserResource($resource, helperService) {
 
 	return {
-        user: user
+    user: user,
+    login: login
 	};
 
 	function user(){
@@ -24,6 +25,12 @@ function UserResource($resource, helperService) {
 		});
 
 	}
+
+  function login(){
+    return $resource(helperService.baseUrl + 'api/login', { },{
+      login: { method: 'POST' }
+    });
+  }
 
 }
 

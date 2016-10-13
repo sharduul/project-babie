@@ -13,12 +13,41 @@ angular
                     'babie.components.header',
                     'babie.components.family',
                     'babie.components.user'])
+  .factory('authInterceptor', AuthInterceptor)
   .run(Run)
-  .config(Config)
+  .config(Config);
 
 
-Config.$inject = ['$stateProvider', '$urlRouterProvider'];
+Config.$inject = ['$stateProvider', '$urlRouterProvider', '$httpProvider'];
 Run.$inject = ['$ionicPlatform', '$rootScope', '$state'];
+AuthInterceptor.$inject = ['authenticationService'];
+
+// authentication interceptor
+// when sending ani API request it will auto-magically send token in the header
+// when receiving the API response it will check if the response contains token. It will append token on client side likewise.
+function AuthInterceptor(authenticationService){
+  return {
+    // automatically attach Authorization header for every request
+    request: function(config) {
+      var token = authenticationService.getToken();
+      if(token) {
+        config.headers["x-access-token"] = token;
+      }
+
+      return config;
+    },
+
+    // if a token was sent back, save it
+    response: function(res) {
+      if(res.data.token) {
+        authenticationService.saveToken(res.data.token);
+        authenticationService.saveTokenExpiration(60 * 60 * 24 * 1000 * 30); // 30 days. make it infinite. until user logs out.
+      }
+
+      return res;
+    }
+  }
+}
 
 function Run($ionicPlatform, $rootScope, $state) {
 
@@ -43,7 +72,10 @@ function Run($ionicPlatform, $rootScope, $state) {
 
 }
 
-function Config($stateProvider, $urlRouterProvider){
+function Config($stateProvider, $urlRouterProvider, $httpProvider){
+
+  // plugin the authentication interceptor
+  $httpProvider.interceptors.push('authInterceptor');
 
    $stateProvider
 
@@ -78,7 +110,12 @@ function Config($stateProvider, $urlRouterProvider){
        url: "/familyAdd",
        templateUrl: "components/family/familyAdd.html",
        controller: 'familyAddController as familyAdd'
-    });
+    })
+     .state('login', {
+       url: "/login",
+       templateUrl: "components/user/login.html",
+       controller: 'loginController as login'
+     });
 
 
     // if none of the above states are matched, use this as the fallback

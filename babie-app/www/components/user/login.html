@@ -1,0 +1,53 @@
+<md-card flex class="component-wrapper">
+  <ion-slide-box on-slide-changed="login.slideChanged($index)">
+    <ion-slide>
+      <form>
+        <md-input-container class="md-block input-large" flex-gt-sm>
+          <label>Email</label>
+          <input ng-model="login.user.email">
+        </md-input-container>
+        <md-input-container class="md-block input-large" flex-gt-sm>
+          <label>Password</label>
+          <input ng-model="login.user.password">
+        </md-input-container>
+
+        <md-button class="md-warn" aria-label="logout"
+                   ng-click="login.$ionicSlideBoxDelegate.next()">
+          register
+        </md-button>
+        <md-button class="md-warn md-raised" aria-label="logout"
+                   ng-click="login.login()">
+          login
+        </md-button>
+      </form>
+    </ion-slide>
+    <ion-slide>
+      <form>
+        <md-input-container class="md-block input-large" flex-gt-sm>
+          <label>Full name</label>
+          <input ng-model="login.user.name">
+        </md-input-container>
+        <md-input-container class="md-block input-large" flex-gt-sm>
+          <label>Email</label>
+          <input ng-model="login.user.email">
+        </md-input-container>
+        <md-input-container class="md-block input-large" flex-gt-sm>
+          <label>Password</label>
+          <input ng-model="login.user.password">
+        </md-input-container>
+        <md-input-container class="md-block input-large" flex-gt-sm>
+          <label>Confirm Password</label>
+          <input ng-model="login.confirmPassword">
+        </md-input-container>
+        <md-button class="md-warn" aria-label="logout"
+                   ng-click="login.$ionicSlideBoxDelegate.previous()">
+          login
+        </md-button>
+        <md-button class="md-warn md-raised" aria-label="logout"
+                   ng-click="login.getNamesByAlphabet(alphabet)">
+          register
+        </md-button>
+      </form>
+    </ion-slide>
+  </ion-slide-box>
+</md-card>
